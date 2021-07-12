@@ -1,5 +1,6 @@
 package _test;
 import linear.List;
+import linear.ListWithViewer;
 import gui.GUI;
 import baeume.BinaryTree;
 import baeume.TreeViewer;
