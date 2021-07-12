@@ -12,6 +12,7 @@ import linear.ListWithViewer;
 
 public class GraphTest {
 
+	// Attribut, in dem die Karte gespeichert wird.
 	public GraphWithViewer karte;
 
 	// Rahmenmethode zum testen
