@@ -10,7 +10,7 @@ import linear.List;
 import linear.ListWithViewer;
 
 
-public class GraphTest {
+public class GraphTest_Matrix {
 
 	// Attribut, in dem die Karte gespeichert wird.
 	public GraphWithViewer karte;
@@ -46,7 +46,7 @@ public class GraphTest {
 	}
 
 
-	public GraphTest(){
+	public GraphTest_Matrix(){
 		karte = new GraphWithViewer();
 		Vertex dortmund = new Vertex("Dortmund");
 		karte.addVertex(dortmund);
