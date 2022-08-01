@@ -3,31 +3,28 @@ package sonstiges;
 import baeume.ComparableContent;
 
 public class Celebrity extends Person{
-	private int einkommen;
+	private int vermoegen;
 	
-	public Celebrity(String pName, String pVorname, int pEinkommen){
+	public Celebrity(String pName, String pVorname, int pVermoegen){
 		super(pName, pVorname);
-		this.einkommen = pEinkommen;
+		this.vermoegen = pVermoegen;
 	}
 
 	
-	public int getEinkommen() {
-		return einkommen;
+	public int getVermoegen() {
+		return vermoegen;
 	}
 
-	public void setEinkommen(int pEinkommen) {
-		this.einkommen = pEinkommen;
+	public void setVermoegen(int pVermoegen) {
+		this.vermoegen = pVermoegen;
 	}
 	
 	public String toString(){
-		return (super.toString()+", "+this.einkommen);
+		return (super.toString()+", "+this.vermoegen);
 	}
 
 	public boolean istAlphabetischNach(Celebrity pPerson) {
-		if(this.getName().compareTo(pPerson.getName()) > 0){
-			return true;
-		}
-		return false;
+		return this.getName().compareTo(pPerson.getName()) > 0;
 	}
 
 

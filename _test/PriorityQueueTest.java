@@ -26,7 +26,7 @@ public class PriorityQueueTest {
 	public void nachEinkommenInPriorityQueueUebertragen(){
 		for(cL.toFirst();cL.hasAccess(); cL.next()){
 			Celebrity c = cL.getContent();
-			pq.insert(c, c.getEinkommen());
+			pq.insert(c, c.getVermoegen());
 		}
 	}
 	
@@ -40,7 +40,7 @@ public class PriorityQueueTest {
 	
 	public void insert(String pVorname, int pEinkommen ){
 		Celebrity c = new Celebrity("Test", pVorname, pEinkommen);
-		pq.insert(c, c.getEinkommen());
+		pq.insert(c, c.getVermoegen());
 	}
 	
 	
