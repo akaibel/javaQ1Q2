@@ -12,7 +12,7 @@ public class Celebrities {
 	
 	
 	private static String[] vornamen  = { "Steven"    , "Oprah"   , "George" , "Rihanna"  , "Xatar" , "JK"     , "Heidi"  , "Sebastian" , "Jennifer" , "Neuer"  , "Cristiano", "Keanu"  }; 
-	private static String[] namen     = { "Spielberg" , "Winfrey" , "Lucas"  , "Rihanna"  , "Giware", "Rowling", "Klum"   , "Vettel"    , "Lopez"    , "Manuel" , "Ronaldo"  , "Reeves" };
+	private static String[] namen     = { "Spielberg" , "Winfrey" , "Lucas"  , "Rihanna"  , "Giware Hajabi", "Rowling", "Klum"   , "Vettel"    , "Lopez"    , "Manuel" , "Ronaldo"  , "Reeves" };
 	private static int[]    vermoegen = { 8000        , 3500      , 10000    , 1700       , 8       , 1000     ,  160     , 140         , 400        , 40       , 500        , 380      };
 
 	public static Celebrity[] celebritiesArray(){
