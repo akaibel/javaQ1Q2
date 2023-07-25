@@ -70,6 +70,9 @@ public class GViewer extends JFrame implements VertexListener, EdgeListener {
 	private static String CIRCLE_LAYOUT = "circlelayout";
 	private static String ISOM_LAYOUT = "isomlayout";
 	private static final long SWITCH_LAYOUT_SLEEP = 500;
+
+
+	public static final Color LIGHT_RED = new Color(255, 120, 120);
 	
 	/**
 	 * the graph
@@ -173,6 +176,21 @@ public class GViewer extends JFrame implements VertexListener, EdgeListener {
 
 		vv.getRenderer().getVertexLabelRenderer().setPosition(Renderer.VertexLabel.Position.CNTR);
 		vv.getRenderContext().setVertexLabelTransformer(new ToStringLabeller<String>());
+
+		// adapt font size
+		 vv.getRenderContext().setVertexFontTransformer(new Transformer<String, Font>(){
+		        @Override
+		        public Font transform(String s) {
+		            return new Font("Arial", Font.BOLD, Configuration.FONT_SIZE);
+		        }
+		    });
+		 
+		 vv.getRenderContext().setEdgeFontTransformer(new Transformer<Integer, Font>(){
+		        @Override
+		        public Font transform(Integer i) {
+		            return new Font("Arial", Font.BOLD, Configuration.FONT_SIZE);
+		        }
+		    });
 
 
 		// create a frame to hold the graph
@@ -325,10 +343,13 @@ public class GViewer extends JFrame implements VertexListener, EdgeListener {
 				Layout<S1, I1> layout, S1 vertex) {
 			GraphicsDecorator graphicsContext = rc.getGraphicsContext();
 			Point2D center = layout.transform(vertex);
-			Shape shape = new Ellipse2D.Double(center.getX()-30, center.getY()-15, 60, 30);
+			int shapesize = Configuration.FONT_SIZE * 10 / 4;
+			Shape shape = new Ellipse2D.Double(center.getX()-shapesize, center.getY()-shapesize/2, shapesize*2, shapesize);
+			//Shape shape = new Ellipse2D.Double(center.getX()-30, center.getY()-15, 60, 30);
 			Color color = Color.yellow;
 			if(isMarked(vertex.toString())){
-				color = Color.RED;
+				//color = Color.RED;
+				color = LIGHT_RED;
 			}
 			graphicsContext.setPaint(color);
 			graphicsContext.fill(shape);			

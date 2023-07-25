@@ -36,7 +36,7 @@ public class TreeViewer extends javax.swing.JFrame {
 
 
 
-	private static Font font = new Font("Serif", Font.BOLD, 14);
+	private static Font font = new Font("Arial", Font.BOLD, Configuration.FONT_SIZE);
 
 	private static TreeViewer TREE_VIEWER_SINGLETON;
 
