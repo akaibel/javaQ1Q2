@@ -1,5 +1,7 @@
 package _test;
 import linear.ListWithViewer;
+import linear.List;
+import sonstiges.Person;
 import datenbank.DatabaseConnector;
 import datenbank.QueryResult;
 import gui.GUI;
