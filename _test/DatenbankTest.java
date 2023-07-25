@@ -10,21 +10,27 @@ public class DatenbankTest {
 	
 	public DatenbankTest() {
 		//                                    ip                       port database  user   password
-		connector = new DatabaseConnector("sibi-rh01.schule.sibi.tsc", 3306, "demo", "demo", "sibiif12");
+		connector = new DatabaseConnector("127.0.0.1", 3306, "schule", "root", "");
 		String errorMessage = connector.getErrorMessage();
 		if(errorMessage != null) System.err.println(errorMessage);
 	}
 	
 
-	public ListWithViewer<String> zehnFilmeMit(String pDarsteller){
+	/**
+	 * Beispielmethode
+	 * gibt eine Liste zurueck, in der fuer jede Klasse angegeben ist,
+	 * wie viel Unterricht die Klasse in dem Fach hat.
+	 * @param pFach das Fach
+	 * @return
+	 */
+	public ListWithViewer<String> klassenUnterricht(String pFach){
 		ListWithViewer<String> ergebnis = new ListWithViewer<String>();
 		String sqlStatement = 
-		  " SELECT h.name AS hauptdarstellername, f.name AS filmname, f.oscars AS oscars "+
-	      " FROM film f, film_has_hauptdarsteller fh, hauptdarsteller h "+
-          " WHERE f.id = fh.film_id "+
-	      " AND h.id = fh.hauptdarsteller_id "+
-		  " AND h.name LIKE '%"+pDarsteller+"%' "+
-	      " LIMIT 10 ";
+		  " SELECT k.name AS klasse, SUM(u.stunden) AS stunden "+
+	      " FROM klasse k LEFT JOIN unterricht u "+
+		  " ON k.id = u.klasse_id " +
+          " AND u.fach = '"+pFach+"'"+
+	      " GROUP BY k.name ";
 		System.out.println(sqlStatement);
 
 		connector.executeStatement(sqlStatement);
@@ -40,11 +46,16 @@ public class DatenbankTest {
 
 		String[][] data = queryResult.getData();
 		for (int i = 0; i < data.length; i++) {
-			String hauptdarsteller = data[i][0];
-			String filmName = data[i][1];
-			String oscarsString = data[i][2];
-			int oscars = Integer.parseInt(oscarsString);
-			String zeile = hauptdarsteller+": "+filmName+" ("+oscars+" Oscars)";
+			String klasse = data[i][0];
+			String stundenString = data[i][1];
+			int stunden = -1;
+			if(stundenString == null || stundenString.toLowerCase().equals("null")) {
+				stunden = 0;
+			}
+			else {
+				stunden = Integer.parseInt(stundenString);
+			}
+			String zeile = klasse+": "+stunden+" "+pFach;
 			System.out.println(zeile);
 			ergebnis.append(zeile);
 		}
