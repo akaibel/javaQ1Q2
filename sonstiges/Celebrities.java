@@ -11,9 +11,9 @@ import linear.StackWithViewer;
 public class Celebrities {
 	
 	
-	private static String[] vornamen  = { "George" , "Steven"    , "Kanye" , "Oprah"   , "Rihanna"  , "Jay" , "JK"     , "Heidi"  , "Sebastian" , "Jennifer" , "Neuer"  , "Cristiano", "Keanu"  }; 
-	private static String[] namen     = { "Lucas"  , "Spielberg" , "West"  , "Winfrey" , "Rihanna"  ,  "Z"  , "Rowling", "Klum"   , "Vettel"    , "Lopez", "Manuel", "Ronaldo"       , "Reeves" };
-	private static int[]    vermoegen = { 10000    , 8000        , 6600    , 3500      , 1700       , 1300  , 1000     ,  160     , 140         , 400      , 40       , 500          , 380      };
+	private static String[] vornamen  = { "Steven"    , "Oprah"   , "George" , "Rihanna"  , "Xatar" , "JK"     , "Heidi"  , "Sebastian" , "Jennifer" , "Neuer"  , "Cristiano", "Keanu"  }; 
+	private static String[] namen     = { "Spielberg" , "Winfrey" , "Lucas"  , "Rihanna"  , "Giware", "Rowling", "Klum"   , "Vettel"    , "Lopez"    , "Manuel" , "Ronaldo"  , "Reeves" };
+	private static int[]    vermoegen = { 8000        , 3500      , 10000    , 1700       , 8       , 1000     ,  160     , 140         , 400        , 40       , 500        , 380      };
 
 	public static Celebrity[] celebritiesArray(){
 		Celebrity[] ergebnis = new Celebrity[namen.length];
