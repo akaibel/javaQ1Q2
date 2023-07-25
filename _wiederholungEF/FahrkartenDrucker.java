@@ -1,45 +1,61 @@
 package _wiederholungEF;
 
+import java.awt.Font;
+
+import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
+
+import _config.Configuration;
 import gui.GUI;
 
 public class FahrkartenDrucker {
-	private int vorhandeneSeiten;
+	private int vorhandeneBlaetter;
+	private GUI druckerGUI;
 	
 	public FahrkartenDrucker(){
-		vorhandeneSeiten = 2;
-		new GUI(this);
+		vorhandeneBlaetter = 2;
+		druckerGUI = new GUI(this);
 	}
 	
-	public void papierNachfuellen(int pSeiten){
-		vorhandeneSeiten += pSeiten;
+	public void papierNachfuellen(int pBlaetter){
+		vorhandeneBlaetter += pBlaetter;
 	}
 	
 	
 	public boolean drucken(String pFahrkarte){
-		if(vorhandeneSeiten < 1){
+		if(vorhandeneBlaetter < 1){
 			System.err.println("Kein Papier mehr!");
 			return false;
 		}
 		String ueberschrift = "*** Deine Fahrkarte ***";
 		int sternchenZahl = (ueberschrift.length() - pFahrkarte.length() - 2)/2;
-		System.out.println(ueberschrift);
-		sternchenDrucken(sternchenZahl);
-		System.out.print(" "+pFahrkarte+" ");
-		sternchenDrucken(sternchenZahl);
-		System.out.println();
-		sternchenDrucken(ueberschrift.length());
-		System.out.println();
-		System.out.println();
-		vorhandeneSeiten--;
+		String fahrkartenText = "";
+		fahrkartenText += (sternchen(ueberschrift.length())+"\n");
+		fahrkartenText += (ueberschrift+"\n");
+		fahrkartenText += (sternchen(sternchenZahl));
+		fahrkartenText += " "+pFahrkarte+" ";
+		fahrkartenText += (sternchen(sternchenZahl) + "\n");
+		fahrkartenText += (sternchen(ueberschrift.length())+"\n");
+		fahrkartenText += ("\n");
+		fahrkartenText += ("\n");
+		//System.out.println(fahrkartenText);
+		JTextArea textArea = new JTextArea();
+        Font courierNewFont = new Font("Courier New", Font.PLAIN, Configuration.FONT_SIZE);
+        textArea.setFont(courierNewFont);
+        textArea.setText(fahrkartenText);
+		JOptionPane.showMessageDialog(druckerGUI,textArea);
+		vorhandeneBlaetter--;
 		return true;
 	}
 	
-	private void sternchenDrucken(int anzahl){
+	private String sternchen(int anzahl){
+		String ergebnis = "";
 		if (anzahl > 0) {
 			for (int i = 0; i < anzahl; i++) {
-				System.out.print("*");
+				ergebnis += "*";
 			} 
 		}
+		return ergebnis;
 	}
 	
 	public static void main(String[] args) {
