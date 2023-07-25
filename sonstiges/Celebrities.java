@@ -21,7 +21,7 @@ public class Celebrities {
 			Celebrity aktuell = new Celebrity(namen[i], vornamen[i], vermoegen[i]);
 			ergebnis[i] = aktuell;
 		}
-		nachNamenSortieren(ergebnis);
+		//nachNamenSortieren(ergebnis);
 		return ergebnis;
 	}
 	
