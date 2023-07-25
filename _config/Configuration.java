@@ -21,4 +21,14 @@ public class Configuration {
 	 */
 	public static final int WARTEZEIT_GRAPH = 50;
 
+	/**
+	 * die Schriftgroesse in den grafischen Oberflaechen
+	 */
+	public static final int FONT_SIZE = 12;
+	
+	/**
+	 * die Breite der angezeigten Listen 
+	 * fuer ListWithViewer, QueueWithViewer, StackWithViewer
+	 */
+	public static final int LISTEN_ANZEIGE_BREITE = 200;
 }

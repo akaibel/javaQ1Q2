@@ -1,6 +1,7 @@
 package linear;
 
 
+import java.awt.Font;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.util.Iterator;
@@ -37,7 +38,7 @@ public class LViewer extends javax.swing.JFrame {
 	
 	private static int LOCATION_X = 0;
 	private static int LOCATION_Y = 0;
-	private static int FRAMEWIDTH = 200;
+	private int FRAMEWIDTH = Configuration.LISTEN_ANZEIGE_BREITE;
 	
 	private JScrollPane scrollPane;
 	private JTextArea textArea;
@@ -148,6 +149,8 @@ public class LViewer extends javax.swing.JFrame {
 				getContentPane().add(scrollPane);
 				{
 					textArea = new JTextArea();
+					Font textFont = new Font("Arial", Font.PLAIN, Configuration.FONT_SIZE);
+		            textArea.setFont(textFont);
 					scrollPane.setViewportView(textArea);
 				}
 			}
