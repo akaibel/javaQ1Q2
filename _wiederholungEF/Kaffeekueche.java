@@ -19,15 +19,12 @@ public class Kaffeekueche {
 	public String toString(){
 		return "dieKueche";
 	}
-	
-	public static void main(String[] args) {
-		Kaffeekueche kueche = new Kaffeekueche();
 
-		kueche.kaffeetrinker = new Kaffeetrinker[2];
-		kueche.kaffeetrinker[0] = new Kaffeetrinker("Lisa", kueche);
-		kueche.kaffeetrinker[1] = new Kaffeetrinker("Anton", kueche);
-
+	public void setzeKaffeetrinker(Kaffeetrinker[] pKaffeetrinker) {
+		this.kaffeetrinker = pKaffeetrinker;
+		
 	}
+	
 	
 	
 }

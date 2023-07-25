@@ -3,7 +3,10 @@ package _wiederholungEF;
 import gui.GUI;
 
 public class Kaffeemaschine {
+	// maximal 1000g
 	private int kaffee;
+	
+	// maximal 2000ml
 	private int wasser;
 	
 	public Kaffeemaschine() {
@@ -11,26 +14,28 @@ public class Kaffeemaschine {
 	}
 	
 	public boolean wasserNachfuellen(int pMenge){
-		if(wasser + pMenge > 2000){
-			return false;
-		}
-		wasser += pMenge;
-		return true;
+		//TODO
+		return false;
 	}
 
 	public boolean kaffeeNachfuellen(int pMenge) {
-		// TODO Auto-generated method stub
+		// TODO 
 		return false;
 	}
 	
 	public String kaffeeKochen(){
-		//Abbruchbed.
-		if(this.wasser < 150){
-			return "zu wenig Wasser";
-		}
-		// Haupthandlung
 		//TODO
+		//Abbruchbedingung fuer zu wenig Wasser
+		
+		// Abbruchbedingung fuer zu wenig Kaffee
+		
+		// Haupthandlung: kaffee und wasser reduzieren
+		
 		return "Kaffee";
+	}
+	
+	public String toString() {
+		return "De'longhi ECAM";
 	}
 
 }
