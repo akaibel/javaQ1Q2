@@ -1,7 +1,6 @@
 package _test;
 
 
-import java.util.Vector;
 
 import graph.Edge;
 import graph.Graph;
@@ -137,9 +136,6 @@ public class GraphTest {
 		// auf ein geeignetes Layout umstellen
 		karte.switchToISOMLayout();
 	}
-	
-	
-
 	
 	public static void main(String[] args) {
 		GraphTest gt = new GraphTest();
