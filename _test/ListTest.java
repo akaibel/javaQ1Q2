@@ -20,7 +20,11 @@ public class ListTest {
 	
 	public void ausgeben() {
 		System.out.println("*** ausgeben ***");
-		//TODO
+		celebritiesList.toFirst();
+		while(celebritiesList.hasAccess()) {
+			Celebrity c = celebritiesList.getContent();
+			System.out.println(c.getVorname()+" "+c.getName()+": "+c.getVermoegen());
+		}
 	}
 
 	
