@@ -138,46 +138,6 @@ public class GraphTest {
 		karte.switchToISOMLayout();
 	}
 	
-	public void printMatrix() {
-		int anzahlStaedte = 0;
-		Vector<String> staedte = new Vector<String>();
-		String staedteString = "staedte = [";
-		List<Vertex> vertices = karte.getVertices();
-		for(vertices.toFirst(); vertices.hasAccess(); vertices.next()) {
-			String stadt = vertices.getContent().getID();
-			staedteString += "'"+stadt+"'"+",";
-			staedte.add(stadt);
-			anzahlStaedte++;
-		}
-		staedteString = staedteString.substring(0,staedteString.length()-1);
-		staedteString += "]";
-		System.out.println(staedteString);
-		int[][] entfernungen = new int[anzahlStaedte][anzahlStaedte];
-		List<Edge> edges = karte.getEdges();
-		for(edges.toFirst(); edges.hasAccess(); edges.next()) {
-			Edge e = edges.getContent();
-			double weight = e.getWeight();
-			Vertex v0 = e.getVertices()[0];
-			Vertex v1 = e.getVertices()[1];
-			int index0 = staedte.indexOf(v0.getID());		
-			int index1 = staedte.indexOf(v1.getID());
-			entfernungen[index0][index1] = (int)weight;
-			entfernungen[index1][index0] = (int)weight;
-		}
-		System.out.println();
-		System.out.println("entfernungen = []");
-		for(int[] zeile:entfernungen) {
-			String z = "entfernungen.add([";
-			for(int zelle:zeile) {
-				z += zelle + ",";
-			}
-			z = z.substring(0,z.length()-1);
-			z += "])";
-			System.out.println(z);
-			
-		}
-		
-	}
 	
 
 	
