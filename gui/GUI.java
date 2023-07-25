@@ -32,6 +32,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.WindowConstants;
 
+import _config.Configuration;
+
 /**
  * eine Benutzeroberflaeche fuer Objekte beliebiger Klassen.
  * @author akaibel
@@ -69,7 +71,7 @@ public class GUI extends JFrame {
    * wichtig fuer das veraendern der Schriftgroesse
    */
   private Vector<SchriftgroessenLabel> labelVector;
-  private int fontSize = 12;
+  private int fontSize = Configuration.FONT_SIZE;
 
   /**
    * Trennlinie
