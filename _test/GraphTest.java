@@ -133,7 +133,7 @@ public class GraphTest {
 		Edge aachen_koeln = new Edge(aachen, koeln, 68);
 		karte.addEdge(aachen_koeln);
 
-		// auf ein geeignetes Layout umstellen
+		// auf ein geeignetes Layout umstellen.
 		karte.switchToISOMLayout();
 	}
 	
