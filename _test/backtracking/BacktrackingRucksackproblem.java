@@ -30,7 +30,7 @@ public class BacktrackingRucksackproblem {
 	
 	public void ausgeben(boolean[] b){
 		System.out.print(berechneGewicht(b)+": ");
-		for(int i=0; i<dabei.length; i++){
+		for(int i=0; i<b.length; i++){
 			if(b[i]){
 				System.out.print(gewichte[i]+",");
 			}
