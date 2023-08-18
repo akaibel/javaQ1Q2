@@ -2,3 +2,8 @@
 /BacktrackingMagischesQuadrat.class
 /BacktrackingRucksackproblem.class
 /BacktrackingSudoku.class
+/Maze.class
+/MazeDisplay$MazeDisplayPanel.class
+/MazeDisplay.class
+/MazeSolver.class
+/MazeWalls.class
