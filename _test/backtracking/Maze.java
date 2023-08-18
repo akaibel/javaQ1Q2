@@ -37,7 +37,7 @@ public class Maze {
     /**
      * makes a BACK-move in the direction
      * @param direction 0:up, 1: right, 2: down, 3: left
-     * @return true: move was successful; false: there was a wall
+     * @return  true: move was successful; false: there was a wall
      */    
     public boolean moveBack(int direction) {
     	
