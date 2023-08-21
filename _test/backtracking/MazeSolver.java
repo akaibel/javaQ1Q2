@@ -14,12 +14,18 @@ public class MazeSolver {
 	private boolean findGoal() {
 		System.out.println("findGoal()");
 		//TODO
+		maze.markPlayerFieldAsVisited(true);
 		maze.move(2);
+		maze.markPlayerFieldAsVisited(true);
 		maze.move(2);
 		System.out.println("isPlayerOnVisited(): "+maze.isPlayerOnVisited());
+		maze.markPlayerFieldAsVisited(false);
 		maze.moveBack(2);
+		maze.markPlayerFieldAsVisited(false);		
 		maze.moveBack(2);
+		maze.markPlayerFieldAsVisited(true);
 		// nach oben bewegen geht nicht - es passiert also nichts
+		System.out.println("isWallInDirection(0): "+maze.isWallInDirection(0));
 		maze.move(0);
 		maze.move(1);
 		System.out.println("isPlayerOnVisited(): "+maze.isPlayerOnVisited());

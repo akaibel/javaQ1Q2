@@ -89,7 +89,7 @@ public class MazeDisplay {
 	                    int circleX = col * CELL_SIZE + CELL_SIZE / 2;
 	                    int circleY = row * CELL_SIZE + CELL_SIZE / 2;
 	                    //System.out.println("circleX, circleY: "+circleX+","+circleY);
-	                    g.setColor(Color.YELLOW);
+	                    g.setColor(Color.ORANGE);
 	                    g.fillOval(circleX - CELL_SIZE / 4, circleY - CELL_SIZE / 4, CELL_SIZE / 2, CELL_SIZE / 2);
 	                }
 	            }

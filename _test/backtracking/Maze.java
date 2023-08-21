@@ -26,35 +26,27 @@ public class Maze {
     }
     
     /**
-     * moves the player and sets a mark, where the player comes from
-     * @param direction 0:up, 1: right, 2: down, 3: left
-     * @return true: move was successful; false: there was a wall
-     */    
-    public boolean move(int direction) {
-    	return move(direction, true);
-    }
-    
-    /**
      * makes a BACK-move in the direction
      * @param direction 0:up, 1: right, 2: down, 3: left
      * @return  true: move was successful; false: there was a wall
      */    
     public boolean moveBack(int direction) {
     	
-    	return move((direction+2)%4, true);
+    	return move((direction+2)%4);
     }
 
     /**
      * moves the player
      * @param direction 0:up, 1: right, 2: down, 3: left
-     * @param mark: marks/unmarks the place the player comes from
      * @return true: move was successful; false: there was a wall
      */    
-    private boolean move(int direction, boolean mark) {
+    public boolean move(int direction) {
+    	if(isWallInDirection(direction)) {
+    		System.err.println("impossible movement Maze.move("+direction+"): there is a wall!!");
+    		return false;
+    	}
     	if(direction == 0) {
         	if(field[playerY-1][playerX] != wall) {
-        		if(mark) field[playerY][playerX] = visited;
-        		else field[playerY][playerX] = empty;
         		playerY -= 1;
                 display.updatePlayer(playerX, playerY);
                 waitAWhile();
@@ -64,8 +56,6 @@ public class Maze {
     	}
     	else if(direction == 1) {
         	if(field[playerY][playerX+1] != wall) {
-        		if(mark) field[playerY][playerX] = visited;
-        		else field[playerY][playerX] = empty;
         		playerX += 1;
                 display.updatePlayer(playerX, playerY);
                 waitAWhile();
@@ -75,8 +65,6 @@ public class Maze {
     	}
     	else if(direction == 2) {
         	if(field[playerY+1][playerX] != wall) {
-        		if(mark) field[playerY][playerX] = visited;
-        		else field[playerY][playerX] = empty;
         		playerY += 1;
                 display.updatePlayer(playerX, playerY);
                 waitAWhile();
@@ -86,8 +74,6 @@ public class Maze {
     	}
     	else if(direction == 3) {
         	if(field[playerY][playerX-1] != wall) {
-        		if(mark) field[playerY][playerX] = visited;
-        		else field[playerY][playerX] = empty;
         		playerX -= 1;
                 display.updatePlayer(playerX, playerY);
                 waitAWhile();
@@ -99,8 +85,32 @@ public class Maze {
     	return false;
     }
     
+    /**
+     * checks, whether a wall is in the direction
+     * @param direction 0:up, 1: right, 2: down, 3: left
+     * @return true: there is a wall; false: there is no wall
+     */    
+    public boolean isWallInDirection(int direction) {
+    	if(direction == 0) return field[playerY-1][playerX] == wall; 
+    	else if(direction == 1) return field[playerY][playerX+1] == wall;
+    	else if(direction == 2) return field[playerY+1][playerX] == wall;
+    	else if(direction == 3) return field[playerY][playerX-1] == wall; 
+    	System.err.println("impossible direction "+direction+" in Maze.isWallInDirection(int direction)");
+    	System.exit(0);
+    	return false;
+    }
+    
     public boolean isPlayerOnGoal() {
     	return field[playerY][playerX] == goal;
+    }
+    
+    public void markPlayerFieldAsVisited(boolean pMark) {
+    	if(pMark) {
+    		field[playerY][playerX] = visited;
+    	}
+    	else {
+    		field[playerY][playerX] = empty;    		
+    	}
     }
     
     public boolean isPlayerOnVisited() {
