@@ -1,0 +1,34 @@
+|--------------------------------------------------------------------------------|
+| Automat                                                                        |
+|--------------------------------------------------------------------------------|
+| - data: HashMap<String, HashMap<String, String>>                               |
+| - zustaendeArrayListe: ArrayList<String>                                       |
+| - startzustand: String                                                         |
+| - endzustaende: ArrayList<String>                                              |
+| - trennzeichen: String    // default value: ","                                |
+|--------------------------------------------------------------------------------|
+| + Automat()                                                                    |
+| + Automat(trennzeichen: String)                                                |
+|                                                                                |
+| + alphabet(): String[]                                                         |
+|                                                                                |
+| + startzustand(): String                                                       |
+| + startzustandSetzen(zustand: String)                                          |
+|                                                                                |
+| + endzustaende(): String[]                                                     |
+| + endzustaendeSetzen(zustaende: String[])                                      |
+| + endzustandHinzufuegen(endzustand: String)                                    |
+| + endzustandEnthalten(zustaendeGetrenntMitTrennzeichen: String): boolean       |
+|                                                                                |
+| + zustandHinzufuegen(zustand: String)                                          |
+| + zustandVorhanden(zustand: String)                                            |
+|                                                                                |
+| + uebergangHinzufuegen(zustand: String, zeichen: String, neuerZustand: String) |
+|                                                                                |
+| + folgeZustand(zustand: String, zeichen: String): String                       |
+|                                                                                |
+| + aufteilen(zustaende: String): String[]                                       |
+| + alphabetischOrdnenUndTrennzeichenSaeubern(zustaende: String): String         |
+|                                                                                |
+| + print()                                                                      |
+|--------------------------------------------------------------------------------|
