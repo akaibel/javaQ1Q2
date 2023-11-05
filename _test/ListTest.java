@@ -12,6 +12,11 @@ import sonstiges.Auto;
 public class ListTest {
 	private List<Celebrity> celebritiesList;
 	//private List<Auto> autoList;
+	private Celebrity arm = new Celebrity("Armer", "Schlucker", 2);
+	private Celebrity mittel = new Celebrity("Max", "Mittel", 450);
+	private Celebrity reich = new Celebrity("Reicher", "Schnoesel", 20000);
+	
+	
 	
 	public ListTest(){
 		celebritiesList = Celebrities.celebritiesList();
