@@ -57,8 +57,7 @@ public class DebuggingSchleifenRekursiv {
 	 */
 	private int potenzFehler(int a, int b){
 		int ergebnis = 1;
-		for(int zaehler=1; zaehler<=b; zaehler++);
-		{
+		for(int zaehler=1; zaehler<=b; zaehler++);{
 			ergebnis = ergebnis * a;
 		}
 		return ergebnis;
