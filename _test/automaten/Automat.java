@@ -60,13 +60,14 @@ public class Automat {
     }
 
     /**
-     * gibt ein Array der moeglichen Folgezustaende zurueck.
-     * wenn es keinen Folgezustand gibt, dann wird ein leeres Array zurueckgegeben.
+     * gibt die moeglichen Folgezustaende zurueck.
+     * die Folgezustaende sind durch Komma getrennt.
+     * wenn es keinen Folgezustand gibt, dann wird ein leerer String zurueckgegeben.
      * @param zustand
      * @param zeichen
      * @return
      */
-    public String folgeZustand(String zustand, String zeichen) {
+    public String folgeZustaende(String zustand, String zeichen) {
         HashMap<String, String> innerMap = data.get(zustand);
         if (innerMap != null && innerMap.get(zeichen) != null) {
             return innerMap.get(zeichen);

@@ -25,7 +25,7 @@
 |                                                                                |
 | + uebergangHinzufuegen(zustand: String, zeichen: String, neuerZustand: String) |
 |                                                                                |
-| + folgeZustand(zustand: String, zeichen: String): String                       |
+| + folgeZustaende(zustand: String, zeichen: String): String                       |
 |                                                                                |
 | + aufteilen(zustaende: String): String[]                                       |
 | + alphabetischOrdnenUndTrennzeichenSaeubern(zustaende: String): String         |
