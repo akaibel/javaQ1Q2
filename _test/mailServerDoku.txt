@@ -1,0 +1,13 @@
+Der "Spielzeug-Mailserver" mailserver.jar
+ist erreichbar unter...
+
+Port 110: für Pop3
+Port 25: für SMTP
+
+Es gibt zwei Nutzer:
+
+Login | Passwort  | Mailadresse
+----------------------------------
+anna  | geheim    | anna@kolleg.de
+----------------------------------
+bob   | topSecret | bob@kolleg.de
