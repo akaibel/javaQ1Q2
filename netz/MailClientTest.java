@@ -1,7 +1,6 @@
-package _test;
+package netz;
 
 import gui.GUI;
-import netz.Connection;
 
 public class MailClientTest {
 	private String user = "anna";
