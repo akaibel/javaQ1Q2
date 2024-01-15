@@ -13,7 +13,7 @@ public class Configuration {
 	 * (TreeViewer)
 	 * langsam ablaufen 
 	 */
-	public static final int WARTEZEIT_BAEUME = 500;
+	public static final int WARTEZEIT_BAEUME = 300;
 	/**
 	 * Wartezeit, damit Graphen 
 	 * (GraphWithViewer) 
