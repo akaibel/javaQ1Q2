@@ -1,9 +1,12 @@
 package _test;
 import gui.GUI;
 
+import java.io.FileNotFoundException;
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.Random;
+
+import javax.swing.JOptionPane;
 
 import file.FileReaderWriter;
     
@@ -78,6 +81,7 @@ public class RSA_Test implements Serializable{
     */
    public void save(){
 	   FileReaderWriter.saveSerialized(this, "RSA_Test.sibi");
+	   JOptionPane.showMessageDialog(null, "saved to RSA_Test.sibi");
    }
    
    public static void main(String[] args) {
