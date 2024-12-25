@@ -3,6 +3,10 @@ package _test;
 import gui.GUI;
 import linear.List;
 import linear.ListWithViewer;
+import linear.List;
+import linear.ListWithViewer;
+import linear.List;
+import linear.ListWithViewer;
 import sonstiges.Autos;
 import sonstiges.Celebrities;
 import sonstiges.Celebrity;
@@ -31,6 +35,50 @@ public class ListTest {
 			System.out.println(c.getVorname()+" "+c.getName()+": "+c.getVermoegen());
 		}
 	}
+
+	
+	public int gesamtVermoegen() {
+		//TODO
+		return -1;
+	}
+	
+	public boolean enthaelt(String pName) {
+		//TODO
+		// VORSICHT: Vergleich von Strings mit equals!!
+		// z.B. if(pName.equals(...)){
+		return false;
+	}
+	
+	public Celebrity derReichste() {
+		//TODO
+		return null;
+	}
+	
+	public void loeschen(String pName) {
+		//TODO
+	}
+	
+	public List<Celebrity> reicherAls(int pVermoegen){
+		List<Celebrity> ergebnis = new ListWithViewer<>();
+		//TODO
+		return ergebnis;
+	}
+		
+	
+	public void einfuegen(String pName, String pVorname, int pVermoegen) {
+		//TODO
+	}
+	
+	/**
+	 * um zu sortieren muss man die Methoden derReichste und loeschen geeignet aufrufen.
+	 * @return
+	 */
+	public List<Celebrity> sortierenNachVermoegen() {
+		List<Celebrity> ergebnis = new ListWithViewer<>();
+		//TODO
+		return ergebnis;
+	}
+
 
 	
 	

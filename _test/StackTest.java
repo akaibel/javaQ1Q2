@@ -61,6 +61,16 @@ public class StackTest {
 		//TODO
 	}
 	
+	public Stack<Celebrity> reicherAls(int pVermoegen){
+		Stack<Celebrity> ergebnis = new StackWithViewer<>();
+		//TODO
+		return ergebnis;
+	}
+	
+	public void einfuegen(String pName, String pVorname, int pVermoegen) {
+		//TODO
+	}
+	
 	/**
 	 * um zu sortieren muss man die Methoden derReichste und loeschen geeignet aufrufen.
 	 * @return
