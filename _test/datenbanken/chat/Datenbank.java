@@ -9,8 +9,8 @@ public class Datenbank {
 	private DatabaseConnector connector;
 	
 	public Datenbank() {
-		//                                    ip                       port database  user   password
-		connector = new DatabaseConnector("sibi-rh01.schule.sibi.tsc", 3306, "demo", "demo", "sibiif12");
+		//                                    ip        port database  user   password
+		connector = new DatabaseConnector("127.0.0.1", 3306, "demo", "root", "");
 		String errorMessage = connector.getErrorMessage();
 		if(errorMessage != null) System.err.println(errorMessage);
 	}

@@ -12,7 +12,7 @@ public class DatenbankTest {
 	
 	public DatenbankTest() {
 		//                                    ip       port database  user   password
-		connector = new DatabaseConnector("127.0.0.1", 3306, "schule", "root", "");
+		connector = new DatabaseConnector("127.0.0.1", 3306, "demo", "root", "");
 		String errorMessage = connector.getErrorMessage();
 		if(errorMessage != null) System.err.println(errorMessage);
 	}

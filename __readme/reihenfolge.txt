@@ -1,0 +1,78 @@
+***** Moegliche Reihenfolge: *****
+Genannt werden hier immer die Klassen, die man starten kann bzw. eine Dokumentation.
+Insgesamt sind das zu viele Projekte fuer die Q1/Q2! 
+D.h. als Lehrer:in muss man eine sinnvolle Auswahl treffen.
+
+***** Q1 ******
+
+*** Wiederholung der EF ***
+_wiederholungEF.Fahrkartenautomat
+_wiederholungEF.KaffeeAnwendung
+
+*** lineare Datenstrukturen ***
+_test.ArrayTest (am besten fuer Wdh. vor dem Abitur)
+_test.array.WetterDaten2018 (am besten fuer Wdh. vor dem Abitur)
+_test.QueueTest
+_test.StackTest
+_test.linear.fuhrpark.FuhrparkStack
+_test.linear.buero.Anwendung
+_test.ListTest
+_test.linear.fuhrpark.FuhrparkList
+_test.linear.staumeldungen.Verwaltung
+_test.linear.domino.Dominospiel (schwierig - nur LK)
+_test.QuicksortTest
+_test.RingTest (nur fuer den inneren Aufbau von Datenstrukturen - schwierig)
+
+*** Vererbung ***
+Nicht bei allen Anwendungen ist Vererbung sinnvoll!!
+_test.vererbung.AnzahlQueueTest
+_test.vererbung.AnzahlStackTest
+_test.vererbung.UniqueListTest
+_test.vererbung.PriorityQueueTest
+_test.vererbung.QuadratTest
+
+*** Binaerbaeume ***
+_test.BinaryTreeTest
+_test.BinaryTreeStrukturbaumTest
+_test.baeume.ahnenverwaltung.Ahnenverwaltung
+_test.baeume.kettenbrief.KettenbriefVerwaltung
+_test.baeume.goetheKekuleZahl
+_test.baeume.bernoulli
+
+*** binaere Suchbaeume ***
+_test.BinarySearchTreeTest
+_test.BinarySearchTreeTestAutos
+_test.baeume.bibliothek.Bibliothek
+_test.baeume.binarySearchTreeZZ._readme
+
+*** Debugging - systematisches Debugging ueben ***
+_test.debugging.DebugginfSchleifenRekursiv
+
+*** Datenbanken ***
+_test.Datenbanktest
+_test.DatenbankFahndungsliste
+_test.datenbank.chat.Datenbank
+
+
+***** Q2 *****
+
+*** Graphen (LK) ***
+_test.GraphTest
+_test.GraphTestMatrix
+
+*** Backtracking (LK) ***
+_test.backtracking.MagischesQuadrat
+_test.backtracking.Sudoku
+_test.backtracking.BacktrackingRucksackproblem.odt
+_test.backtracking.KuerzesterWegTest
+_test.backtracking.MazeSolver.odt
+
+*** Automaten und Grammatiken ***
+_test.automaten.Parser
+_test.automaten.spionage.KGBAutomat
+_test.automaten.hervorheber.Hervorheber
+_test.automaten.bergungGefahrgut.Fahrzeugsteuerung
+_test.automaten.Potenzmengenkonstruktion
+
+*** Kryptographie ***
+_test.RSA_Test
