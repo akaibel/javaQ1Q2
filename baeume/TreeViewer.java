@@ -184,7 +184,9 @@ public class TreeViewer extends javax.swing.JFrame {
 			if(b == this.highlightedTree){
 				String s = this.highlightedTreeContentString;
 				if(highlighted){
-					g.setColor(Color.RED);
+					//g.setColor(Color.RED);
+					//g.setColor(new Color(255, 102, 102));		
+					g.setColor(new Color(144, 238, 144)); // Light Green
 				}
 				else{
 					g.setColor(Color.BLUE);

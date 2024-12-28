@@ -59,6 +59,6 @@ public class BinarySearchTreeTest {
 	
 	public static void main(String[] args) {
 		BinarySearchTreeTest bstt = new BinarySearchTreeTest();
-		new GUI(bstt);
+		new GUI(bstt, "WARTEZEIT_BAEUME");
 	}
 }

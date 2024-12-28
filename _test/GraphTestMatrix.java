@@ -3,6 +3,7 @@ package _test;
 import graph.Edge;
 import graph.Graph;
 import graph.Vertex;
+import gui.GUI;
 import graph.GraphWithViewer;
 
 
@@ -38,6 +39,7 @@ public class GraphTestMatrix {
 
 	public static void main(String[] args) {
 		GraphTestMatrix gtm = new GraphTestMatrix();
+		new GUI(gtm, "WARTEZEIT_GRAPH");
 	}
 
 }

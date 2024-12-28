@@ -67,6 +67,6 @@ public class BinarySearchTreeTestAutos {
 	
 	public static void main(String[] args) {
 		BinarySearchTreeTestAutos bstta = new BinarySearchTreeTestAutos();
-		new GUI(bstta);
+		new GUI(bstta, "WARTEZEIT_BAEUME");
 	}
 }

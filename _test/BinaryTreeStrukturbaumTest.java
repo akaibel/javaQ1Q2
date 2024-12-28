@@ -36,6 +36,6 @@ public class BinaryTreeStrukturbaumTest {
 	}
 
 	public static void main(String[] args) {
-		new GUI(new BinaryTreeStrukturbaumTest());
+		new GUI(new BinaryTreeStrukturbaumTest(), "WARTEZEIT_BAEUME");
 	}
 }

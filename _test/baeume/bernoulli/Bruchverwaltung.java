@@ -10,7 +10,7 @@ public class Bruchverwaltung {
 
 	public Bruchverwaltung() {
 		neuerBaum(4, 1, 6);
-		new GUI(this);
+		new GUI(this, "WARTEZEIT_BAEUME");
 	}
 
 	public Bruch summe(){

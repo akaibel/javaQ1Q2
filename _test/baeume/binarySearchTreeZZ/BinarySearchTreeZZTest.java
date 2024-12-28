@@ -43,6 +43,6 @@ public class BinarySearchTreeZZTest {
 	
 	public static void main(String[] args) {
 		BinarySearchTreeZZTest bstt = new BinarySearchTreeZZTest();
-		new GUI(bstt);
+		new GUI(bstt, "WARTEZEIT_BAEUME");
 	}
 }

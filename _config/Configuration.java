@@ -7,20 +7,25 @@ public class Configuration {
 	 * (StackWithViewer, QueueWithViewer, ListWithViewer)
 	 * langsam ablaufen 
 	 */
-	public static int WARTEZEIT_LINEAR = 50;
+	public static int WARTEZEIT_LINEAR = 100;
 	/**
 	 * Wartezeit, damit Binaerbaeume 
 	 * (TreeViewer)
 	 * langsam ablaufen 
 	 */
-	public static final int WARTEZEIT_BAEUME = 300;
+	public static int WARTEZEIT_BAEUME = 280;
 	/**
 	 * Wartezeit, damit Graphen 
 	 * (GraphWithViewer) 
 	 * langsam ablaufen.
 	 */
-	public static final int WARTEZEIT_GRAPH = 50;
+	public static int WARTEZEIT_GRAPH = 150;
 
+	/**
+	 * maximale Wartezeit, die vom Slider in GUI.java angezeigt werden kann.
+	 */
+	public static final int MAX_WARTEZEIT = 300;
+	
 	/**
 	 * die Schriftgroesse in den grafischen Oberflaechen
 	 */

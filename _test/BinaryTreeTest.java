@@ -54,11 +54,14 @@ public class BinaryTreeTest {
 	private int summe(BinaryTree<Integer> pTree) {
 		int ergebnis = 0;
 		// TODO programmieren:
+		if(pTree.isEmpty()) return 0;
+		ergebnis += pTree.getContent();
+		ergebnis += summe(pTree.getLeftTree()) + summe(pTree.getRightTree());
 		// Abbruchbedingung, Wurzelbehandlung, 2 rekursive Aufrufe, Sachlogik
 		return ergebnis;
 	}
 
 	public static void main(String[] args) {
-		new GUI(new BinaryTreeTest());
+		new GUI(new BinaryTreeTest(), "WARTEZEIT_BAEUME");
 	}
 }

@@ -137,7 +137,7 @@ public class Ahnenverwaltung {
 	}
 
 	public static void main(String[] args) {
-		new GUI(new Ahnenverwaltung());
+		new GUI(new Ahnenverwaltung(), "WARTEZEIT_BAEUME");
 	}
 
 

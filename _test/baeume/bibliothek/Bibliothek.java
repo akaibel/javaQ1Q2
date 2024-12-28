@@ -33,6 +33,6 @@ public class Bibliothek{
     }
     
     public static void main(String[] args) {
-		new GUI(new Bibliothek());
+		new GUI(new Bibliothek(), "WARTEZEIT_BAEUME");
 	}
 }

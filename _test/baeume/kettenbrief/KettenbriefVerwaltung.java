@@ -73,7 +73,7 @@ public class KettenbriefVerwaltung {
 	}
 	
 	public static void main(String[] args) {
-		new GUI(new KettenbriefVerwaltung());
+		new GUI(new KettenbriefVerwaltung(), "WARTEZEIT_BAEUME");
 	}
 	
 }

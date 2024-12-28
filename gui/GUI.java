@@ -9,6 +9,7 @@ package gui;
  */
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -44,22 +45,30 @@ public class GUI extends JFrame {
     private static final long serialVersionUID = 4380161375242238507L;
     private static final int maxAnzahlBuchstaben = 30;
     private static final int maxAnzahlZeilen = 20;
-
+    
     public static Vector<GUI> alleGUIs = new Vector<>();
 
     protected Object dasObjekt;
     protected String klassenNameMitPackage;
     protected SchriftgroessenLabel[] fieldLabels;
     private Field[] fields;
+    
     private Vector<SchriftgroessenLabel> labelVector;
     private int fontSize = Configuration.FONT_SIZE;
+    
     private static String linie = "-----------------------";
+    
     private static int xPosition = 100;
     private static int yPosition = 300;
+    
     private boolean methodeInAusfuehrung;
 
-    private JSlider speedSlider;
+    private JSlider wartezeitSlider;
+	private static final int WARTEZEITSLIDER_PREFERRED_WIDTH = 50;
 
+	/**
+	 * Name der Variablen aus Configuration.java, deren Wert mit dem Slider angepasst werden kann.
+	 */
     private String configurationWaitingTimeVariable;
     
     public GUI(Object pObject) {
@@ -71,6 +80,11 @@ public class GUI extends JFrame {
         alleGUIs.addElement(this);
     }
 
+    /**
+     * erzeugt eine GUI fuer ein Objekt und zeigt einen Slider für die Variable aus Configuration.java an.
+     * @param pObject
+     * @param configurationWaitingTimeVariable die Variable aus Configuration.java, die im Slider angezeigt wird und veraendert werden kann.
+     */
     public GUI(Object pObject, String configurationWaitingTimeVariable) {
         super();
         this.configurationWaitingTimeVariable = configurationWaitingTimeVariable;
@@ -184,15 +198,16 @@ public class GUI extends JFrame {
     	    } catch (Exception ex) {
     	        ex.printStackTrace();
     	    }    	
-        speedSlider = new JSlider(0, 100, speed);
-        speedSlider.addChangeListener(e -> {
-            int newSpeed = speedSlider.getValue();
+        wartezeitSlider = new JSlider(0, Configuration.MAX_WARTEZEIT, speed);
+        wartezeitSlider.setPreferredSize(new Dimension(WARTEZEITSLIDER_PREFERRED_WIDTH, wartezeitSlider.getPreferredSize().height));
+        wartezeitSlider.addChangeListener(e -> {
+            int newSpeed = wartezeitSlider.getValue();
             updateWartezeit(newSpeed);
         });
 
         JPanel sliderPanel = new JPanel();
         sliderPanel.setLayout(new BorderLayout());
-        sliderPanel.add(speedSlider, BorderLayout.CENTER);
+        sliderPanel.add(wartezeitSlider, BorderLayout.CENTER);
 
         this.getContentPane().add(sliderPanel);
         this.pack(); // Ensure the JFrame resizes to fit the slider

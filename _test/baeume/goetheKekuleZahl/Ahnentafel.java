@@ -99,7 +99,7 @@ public class Ahnentafel {
 
 	public static void main(String[] args) {
 		Ahnentafel at = new Ahnentafel();
-		new GUI(at);
+		new GUI(at, "WARTEZEIT_BAEUME");
 	}	
 
 

@@ -139,7 +139,7 @@ public class GraphTest {
 	
 	public static void main(String[] args) {
 		GraphTest gt = new GraphTest();
-		new GUI(gt);
+		new GUI(gt, "WARTEZEIT_GRAPH");
 	}
 
 }
