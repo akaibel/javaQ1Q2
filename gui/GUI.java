@@ -87,6 +87,7 @@ public class GUI extends JFrame {
      */
     public GUI(Object pObject, String configurationWaitingTimeVariable) {
         super();
+        Configuration.READ_AND_START_UPDATING_CONFIGURATION();
         this.configurationWaitingTimeVariable = configurationWaitingTimeVariable;
         dasObjekt = pObject;
         labelVector = new Vector<>();
