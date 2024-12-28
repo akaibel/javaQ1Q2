@@ -39,6 +39,6 @@ public class AnzahlQueueTest {
 
 	public static void main(String[] args) {
 		AnzahlQueueTest qt = new AnzahlQueueTest();
-		new GUI(qt);
+		new GUI(qt, "WARTEZEIT_LINEAR");
 	}
 }

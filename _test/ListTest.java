@@ -33,6 +33,7 @@ public class ListTest {
 		while(celebritiesList.hasAccess()) {
 			Celebrity c = celebritiesList.getContent();
 			System.out.println(c.getVorname()+" "+c.getName()+": "+c.getVermoegen());
+			celebritiesList.next();
 		}
 	}
 
@@ -85,6 +86,6 @@ public class ListTest {
 	
 	public static void main(String[] args) {
 		ListTest lt = new ListTest();
-		new GUI(lt);
+		new GUI(lt,"WARTEZEIT_LINEAR");
 	}
 }

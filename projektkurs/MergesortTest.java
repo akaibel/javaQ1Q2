@@ -108,6 +108,6 @@ public class MergesortTest {
 	}
 
 	public static void main(String[] args) {
-		new GUI(new MergesortTest());
+		new GUI(new MergesortTest(), "WARTEZEIT_LINEAR");
 	}
 }

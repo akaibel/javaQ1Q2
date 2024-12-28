@@ -242,7 +242,7 @@ public class ElternsprechtagServer extends Server {
 
 	public static void main(String[] args) {
 
-		GUI g = new GUI(new ElternsprechtagServer(SERVER_PORT));
+		GUI g = new GUI(new ElternsprechtagServer(SERVER_PORT), "WARTEZEIT_LINEAR");
 		g.setLocation(100, 500);
 	}
 

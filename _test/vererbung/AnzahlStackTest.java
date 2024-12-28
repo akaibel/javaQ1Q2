@@ -39,6 +39,6 @@ public class AnzahlStackTest {
 
 	public static void main(String[] args) {
 		AnzahlStackTest qt = new AnzahlStackTest();
-		new GUI(qt);
+		new GUI(qt, "WARTEZEIT_LINEAR");
 	}
 }

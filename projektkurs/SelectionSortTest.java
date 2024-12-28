@@ -119,6 +119,6 @@ public class SelectionSortTest {
 	}
 
 	public static void main(String[] args) {
-		new GUI(new SelectionSortTest());
+		new GUI(new SelectionSortTest(), "WARTEZEIT_LINEAR");
 	}
 }

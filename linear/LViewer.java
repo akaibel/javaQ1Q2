@@ -31,7 +31,6 @@ import _config.Configuration;
 * LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.
 */
 public class LViewer extends javax.swing.JFrame {
-	private static final long WARTEZEIT = Configuration.WARTEZEIT_LINEAR;
 
 	private static Vector<LViewer> ALLFRAMES = new Vector<LViewer>();
 	
@@ -67,14 +66,14 @@ public class LViewer extends javax.swing.JFrame {
 		this.setEnabled(true);
 		this.befehlLabel.setText(befehl);
 		try {
-			Thread.sleep(LViewer.WARTEZEIT);
+			Thread.sleep(Configuration.WARTEZEIT_LINEAR);
 		} catch (InterruptedException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		listInhaltAnzeigen(list);
 		try {
-			Thread.sleep(LViewer.WARTEZEIT);
+			Thread.sleep(Configuration.WARTEZEIT_LINEAR);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

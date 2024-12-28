@@ -104,6 +104,6 @@ public class FuhrparkStack {
 	}
 	
 	public static void main(String[] args) {
-		new GUI(new FuhrparkStack());
+		new GUI(new FuhrparkStack(), "WARTEZEIT_LINEAR");
 	}
 }

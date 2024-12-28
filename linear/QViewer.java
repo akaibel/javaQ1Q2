@@ -34,7 +34,6 @@ import _config.Configuration;
 * LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.
 */
 public class QViewer extends javax.swing.JFrame {
-	private static final long WARTEZEIT = Configuration.WARTEZEIT_LINEAR;
 
 	private static Vector<QViewer> ALLFRAMES = new Vector<QViewer>();
 	
@@ -71,14 +70,14 @@ public class QViewer extends javax.swing.JFrame {
 		this.setEnabled(true);
 		this.befehlLabel.setText(befehl);
 		try {
-			Thread.sleep(QViewer.WARTEZEIT);
+			Thread.sleep(Configuration.WARTEZEIT_LINEAR);
 		} catch (InterruptedException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		queueInhaltAnzeigen(queue);
 		try {
-			Thread.sleep(QViewer.WARTEZEIT);
+			Thread.sleep(Configuration.WARTEZEIT_LINEAR);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

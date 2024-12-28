@@ -38,7 +38,7 @@ public class Dominospiel {
 
 
 	public static void main(String[] args) {
-		new GUI(new Dominospiel(3));
+		new GUI(new Dominospiel(3), "WARTEZEIT_LINEAR");
 	}
 
 }

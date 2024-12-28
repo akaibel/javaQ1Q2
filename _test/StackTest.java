@@ -83,6 +83,6 @@ public class StackTest {
 
 	public static void main(String[] args) {
 		StackTest st = new StackTest();
-		new GUI(st);
+		new GUI(st, "WARTEZEIT_LINEAR");
 	}
 }

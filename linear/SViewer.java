@@ -36,7 +36,6 @@ import _config.Configuration;
 * LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.
 */
 public class SViewer extends javax.swing.JFrame {
-	private static final long WARTEZEIT = Configuration.WARTEZEIT_LINEAR;
 
 	private static Vector<SViewer> ALLFRAMES = new Vector<SViewer>();
 	
@@ -79,7 +78,7 @@ public class SViewer extends javax.swing.JFrame {
 		}
 		stackInhaltAnzeigen();
 			try {
-				Thread.sleep(SViewer.WARTEZEIT);
+				Thread.sleep(Configuration.WARTEZEIT_LINEAR);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

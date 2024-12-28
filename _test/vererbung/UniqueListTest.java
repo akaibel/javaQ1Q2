@@ -50,6 +50,6 @@ public class UniqueListTest {
 
 	public static void main(String[] args) {
 		UniqueListTest qt = new UniqueListTest();
-		new GUI(qt);
+		new GUI(qt, "WARTEZEIT_LINEAR");
 	}
 }

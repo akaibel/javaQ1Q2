@@ -74,6 +74,6 @@ public class QuicksortTest {
 	}
 
 	public static void main(String[] args) {
-		new GUI(new QuicksortTest());
+		new GUI(new QuicksortTest(), "WARTEZEIT_LINEAR");
 	}
 }

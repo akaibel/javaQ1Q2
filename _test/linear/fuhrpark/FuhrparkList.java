@@ -105,6 +105,6 @@ public class FuhrparkList {
 	}
 	
 	public static void main(String[] args) {
-		new GUI(new FuhrparkList());
+		new GUI(new FuhrparkList(), "WARTEZEIT_LINEAR");
 	}
 }

@@ -8,6 +8,7 @@ import java.util.Vector;
  *
  */
 public class GUITest<ContentType> {
+	
 	private String textPrivat = "bbb";
 	public String text;
 	public boolean jaNein;
@@ -145,6 +146,6 @@ public class GUITest<ContentType> {
 	public static void main(String[] args) {
 		GUITest gt = new GUITest();
 		//Vector<String> s = new Vector<String>();
-		GUI gg = new GUI(gt);
+		GUI gg = new GUI(gt, "WARTEZEIT_LINEAR");
 	}
 }

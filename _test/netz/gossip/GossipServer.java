@@ -47,6 +47,6 @@ public class GossipServer extends Server {
     }
 	
     public static void main(String[] args) {
-		new GUI(new GossipServer());
+		new GUI(new GossipServer(), "WARTEZEIT_LINEAR");
 	}
 }

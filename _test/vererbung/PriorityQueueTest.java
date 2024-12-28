@@ -1,9 +1,8 @@
-package _test;
+package _test.vererbung;
 
 import gui.GUI;
 import linear.List;
 import linear.ListWithViewer;
-import linear.PriorityQueue;
 import sonstiges.Autos;
 import sonstiges.Celebrities;
 import sonstiges.Celebrity;
@@ -45,7 +44,7 @@ public class PriorityQueueTest {
 	
 	
 	public static void main(String[] args) {
-		PriorityQueueTest lt = new PriorityQueueTest();
-		new GUI(lt);
+		PriorityQueueTest pqt = new PriorityQueueTest();
+		new GUI(pqt, "WARTEZEIT_LINEAR");
 	}
 }

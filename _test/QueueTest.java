@@ -1,6 +1,7 @@
 package _test;
 
 
+import _config.Configuration;
 import gui.GUI;
 import linear.Queue;
 import linear.Queue;
@@ -86,6 +87,6 @@ public class QueueTest {
 
 	public static void main(String[] args) {
 		QueueTest qt = new QueueTest();
-		new GUI(qt);
+		new GUI(qt, "WARTEZEIT_LINEAR");
 	}
 }

@@ -11,7 +11,7 @@ public class DatenbankTest {
 	private DatabaseConnector connector;
 	
 	public DatenbankTest() {
-		//                                    ip                       port database  user   password
+		//                                    ip       port database  user   password
 		connector = new DatabaseConnector("127.0.0.1", 3306, "schule", "root", "");
 		String errorMessage = connector.getErrorMessage();
 		if(errorMessage != null) System.err.println(errorMessage);

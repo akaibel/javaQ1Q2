@@ -85,6 +85,6 @@ public class Verwaltung {
 	}
 
 	public static void main(String[] args) {
-		new GUI(new Verwaltung());
+		new GUI(new Verwaltung(), "WARTEZEIT_LINEAR");
 	}
 }

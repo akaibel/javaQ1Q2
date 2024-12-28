@@ -24,8 +24,10 @@ public class DatenbankFahndungsliste {
 		fL.append(new Person("Budig", null));
 		// 5x in DB
 		fL.append(new Person("Armknecht", null));
-		//                                    ip                       port database  user   password
-		connector = new DatabaseConnector("sibi-rh01.schule.sibi.tsc", 3306, "demo", "demo", "sibiif12");
+		
+		//TODO Datenbank-Verbindung anpassen!
+		//                                    ip       port  database  user   password
+		connector = new DatabaseConnector("127.0.0.1", 3306, "schule", "root", "");
 		String errorMessage = connector.getErrorMessage();
 		if(errorMessage != null) System.err.println(errorMessage);
 	}
