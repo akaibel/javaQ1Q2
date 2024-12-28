@@ -6,7 +6,7 @@ import java.util.*;
 
 public class Properties {
 
-    private static final String CONFIG_FILE = "configuration.txt";
+    private static final String CONFIG_FILE = "_config/configuration.txt";
 
     /**
      * Saves or updates a property in the config.txt file.

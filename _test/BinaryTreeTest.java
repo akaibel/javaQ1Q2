@@ -47,6 +47,7 @@ public class BinaryTreeTest {
 	
 	// Rahmenmethode
 	public int summe(){
+		//Aufruf der rekursiven Methode
 		return summe(suchbaum);
 	}
 	
@@ -57,6 +58,71 @@ public class BinaryTreeTest {
 		// Abbruchbedingung, Wurzelbehandlung, 2 rekursive Aufrufe, Sachlogik
 		return ergebnis;
 	}
+	
+	public int anzahlKnoten() {
+		int ergebnis = 0;
+		//TODO: Rekursive Methode programmieren und hier aufrufen!
+		return ergebnis;
+	}
+	
+	public int tiefe() {
+		int ergebnis = 0;
+		//TODO: Rekursive Methode programmieren und hier aufrufen!
+		return ergebnis;
+	}
+	
+	public boolean enthaelt(int pZahl) {
+		//Aufruf der rekursiven Methode
+		return enthaelt(suchbaum, pZahl);
+	}
+	
+	private boolean enthaelt(BinaryTree<Integer> pTree, int pZahl) {
+		// TODO programmieren
+		return false;
+	}
+	
+	public void anRichtigeStelleEinfuegen(int pZahl) {
+		//Aufruf der rekursiven Methode
+		anRichtigeStelleEinfuegen(suchbaum, pZahl);
+	}
+
+	private void anRichtigeStelleEinfuegen(BinaryTree<Integer> pTree, int pZahl) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public List<Integer> alleKnotenInListe(){
+		List<Integer> ergebnis = new ListWithViewer<>();
+		//TODO
+		return ergebnis;
+	}
+	
+	public List<Integer> alleBlaetter(){
+		List<Integer> ergebnis = new ListWithViewer<>();
+		//TODO
+		return ergebnis;
+	}
+	
+	/**
+	 * fuegt die Knoten in Preorder-Reihenfolge der Liste ergebnis hinzu.
+	 * @return
+	 */
+	public List<Integer> preorder(){
+		List<Integer> ergebnis = new ListWithViewer<>();
+		//TODO
+		return ergebnis;
+	}
+	
+	/**
+	 * fuegt die Knoten in Inorder-Reihenfolge der Liste ergebnis hinzu.
+	 * @return
+	 */
+	public List<Integer> inorder(){
+		List<Integer> ergebnis = new ListWithViewer<>();
+		//TODO
+		return ergebnis;
+	}
+	
 
 	public static void main(String[] args) {
 		new GUI(new BinaryTreeTest(), "WARTEZEIT_BAEUME");

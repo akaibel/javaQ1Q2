@@ -12,8 +12,9 @@ _wiederholungEF.KaffeeAnwendung
 *** lineare Datenstrukturen ***
 _test.ArrayTest (am besten fuer Wdh. vor dem Abitur)
 _test.array.WetterDaten2018 (am besten fuer Wdh. vor dem Abitur)
-_test.QueueTest
 _test.StackTest
+_test.QueueTest
+_test.QueueTestAnalyseAufgabe.odt
 _test.linear.fuhrpark.FuhrparkStack
 _test.linear.buero.Anwendung
 _test.ListTest
@@ -74,5 +75,11 @@ _test.automaten.hervorheber.Hervorheber
 _test.automaten.bergungGefahrgut.Fahrzeugsteuerung
 _test.automaten.Potenzmengenkonstruktion
 
+*** Netzwerke ***
+_test.netz.mail._readme.txt
+_test.netz.chat._readme.txt
+_test.netz.gossip.GossipServer
+
 *** Kryptographie ***
+_test.VigenereTest
 _test.RSA_Test

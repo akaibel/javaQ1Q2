@@ -4,6 +4,14 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Die Wartezeiten koennen vom User angepasst werden.
+ * Sie werden dann in configuration.txt gespeichert 
+ * und werden auch von dort geladen.
+ * Das erspart dem User das staendige schneller-stellen.
+ * @author akaib
+ *
+ */
 public class Configuration {
 
 	/**

@@ -6,7 +6,17 @@ import datenbank.DatabaseConnector;
 import datenbank.QueryResult;
 import gui.GUI;
 
-
+/**
+ * DatenbankTest
+ * Damit diese Klasse sinnvoll gestartet werden kann, 
+ * muss man erst eine MariaDB (oder MySQL-DB) gestartet haben.
+ * Auf der muss es eine Datenbank demo geben, die die Beispieldatenbank schule enthaelt.
+ * Weitere Infos dazu im Package datenbank.schuleBeispieldatenbank
+ * Ausserdem muss der mysql-driver in der Bibliothek enthalten sein.
+ * Weitere Infos dazu im package __readme in notwendige_libraries.odt
+ * @author akaib
+ *
+ */
 public class DatenbankTest {
 	private DatabaseConnector connector;
 	
