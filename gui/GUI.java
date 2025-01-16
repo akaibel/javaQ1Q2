@@ -671,43 +671,47 @@ public class GUI extends JFrame {
       }
 
       // die Methode aufrufen
-      // es werden max. 5 Parameter unterstuetzt.
       Object result = null;
       try {
-        if(parameters == null || parameters.length == 0){
-          result = myMethod.invoke(GUI.this.dasObjekt);
-        }
-        else if (parameters.length == 1){
-          result = myMethod.invoke(GUI.this.dasObjekt,
-              parameters[0]);
-        }
-        else if (parameters.length == 2){
-          result = myMethod.invoke(GUI.this.dasObjekt,
-              parameters[0],
-              parameters[1]);
-        }
-        else if (parameters.length == 3){
-          result = myMethod.invoke(GUI.this.dasObjekt,
-              parameters[0],
-              parameters[1],
-              parameters[2]);
-        }
-        else if (parameters.length == 4){
-          result = myMethod.invoke(GUI.this.dasObjekt,
-              parameters[0],
-              parameters[1],
-              parameters[2],
-              parameters[3]);
-        }
-        else if (parameters.length == 5){
-          result = myMethod.invoke(GUI.this.dasObjekt,
-              parameters[0],
-              parameters[1],
-              parameters[2],
-              parameters[3],
-              parameters[4]);
-        }
-        if(result == null){
+    	  // KB: alte Implementierung
+          // es werden nur max. 5 Parameter unterstuetzt.
+//        if(parameters == null || parameters.length == 0){
+//          result = myMethod.invoke(GUI.this.dasObjekt);
+//        }
+//        else if (parameters.length == 1){
+//          result = myMethod.invoke(GUI.this.dasObjekt,
+//              parameters[0]);
+//        }
+//        else if (parameters.length == 2){
+//          result = myMethod.invoke(GUI.this.dasObjekt,
+//              parameters[0],
+//              parameters[1]);
+//        }
+//        else if (parameters.length == 3){
+//          result = myMethod.invoke(GUI.this.dasObjekt,
+//              parameters[0],
+//              parameters[1],
+//              parameters[2]);
+//        }
+//        else if (parameters.length == 4){
+//          result = myMethod.invoke(GUI.this.dasObjekt,
+//              parameters[0],
+//              parameters[1],
+//              parameters[2],
+//              parameters[3]);
+//        }
+//        else if (parameters.length == 5){
+//          result = myMethod.invoke(GUI.this.dasObjekt,
+//              parameters[0],
+//              parameters[1],
+//              parameters[2],
+//              parameters[3],
+//              parameters[4]);
+//        }
+    	
+    	// KB: neue Implementierung: 
+    	// Pass the object and the parameters array directly to invoke
+    	result = myMethod.invoke(GUI.this.dasObjekt, parameters);        if(result == null){
           if(myMethod.getReturnType().toString().equals("void")){
             result = "void";
           }

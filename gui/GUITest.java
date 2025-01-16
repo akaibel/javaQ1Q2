@@ -83,6 +83,10 @@ public class GUITest<ContentType> {
 		}
 		return ergebnis;
 	}
+	
+	public int addiere(int a, int b, int c, int d, int e, int f, int g, int h) {
+		return a+b+c+d+e+f+g+h;
+	}
 
 	public String getText() {
 		return text;
