@@ -11,8 +11,9 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.WindowAdapter;
@@ -26,12 +27,17 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.Vector;
 
+import javax.swing.AbstractAction;
+import javax.swing.ActionMap;
 import javax.swing.BoxLayout;
+import javax.swing.InputMap;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
+import javax.swing.KeyStroke;
 import javax.swing.WindowConstants;
 
 import _config.Configuration;
@@ -166,27 +172,37 @@ public class GUI extends JFrame {
                 public void windowLostFocus(WindowEvent arg0) {
                 }
             });
-
-            this.addKeyListener(new KeyListener() {
-                public void keyPressed(KeyEvent arg0) {
-                }
-
-                public void keyReleased(KeyEvent arg0) {
-                    if (arg0.getKeyCode() == 521 && arg0.getModifiers() == 2) {
-                        fontSize++;
-                        schriftgroesseSetzen(fontSize);
-                    } else if (arg0.getKeyCode() == 45 && arg0.getModifiers() == 2) {
-                        fontSize--;
-                        schriftgroesseSetzen(fontSize);
-                    }
-                }
-
-                public void keyTyped(KeyEvent arg0) {
-                }
-            });
         } catch (Exception e) {
             e.printStackTrace();
         }
+        
+     // Inside your JFrame or main panel setup
+        InputMap inputMap = this.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
+        ActionMap actionMap = this.getRootPane().getActionMap();
+
+        inputMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_PLUS, InputEvent.CTRL_DOWN_MASK), "increaseFont");
+        actionMap.put("increaseFont", new AbstractAction() {
+			private static final long serialVersionUID = 1L;
+
+			@Override
+            public void actionPerformed(ActionEvent e) {
+                fontSize++;
+                schriftgroesseSetzen(fontSize);
+            }
+        });
+
+        inputMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_MINUS, InputEvent.CTRL_DOWN_MASK), "decreaseFont");
+        actionMap.put("decreaseFont", new AbstractAction() {
+			private static final long serialVersionUID = 1L;
+
+			@Override
+            public void actionPerformed(ActionEvent e) {
+                fontSize--;
+                System.out.println("fontsize decrease");
+                schriftgroesseSetzen(fontSize);
+            }
+        });
+
     }
 
     private void initSpeedSlider() {
