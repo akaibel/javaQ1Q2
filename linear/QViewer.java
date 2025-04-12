@@ -1,5 +1,7 @@
 package linear;
 import java.awt.Font;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -28,7 +30,6 @@ public class QViewer extends javax.swing.JFrame {
 	
 	private static int LOCATION_X = 0;
 	private static int LOCATION_Y = 0;
-	private int FRAMEWIDTH = Configuration.LISTEN_ANZEIGE_BREITE;
 	
 	private JScrollPane scrollPane;
 	private JTextArea textArea;
@@ -131,9 +132,9 @@ public class QViewer extends javax.swing.JFrame {
 			}
 			{
 				lastLabel = new JLabel();
+				lastLabel.setFont(fontBold);
 				getContentPane().add(lastLabel);
 				lastLabel.setText("last: null");
-				lastLabel.setPreferredSize(new java.awt.Dimension(FRAMEWIDTH-5, 20));
 			}
 			{
 				scrollPane = new JScrollPane();
@@ -145,22 +146,31 @@ public class QViewer extends javax.swing.JFrame {
 				}
 			}
 			pack();
-			this.setSize(FRAMEWIDTH, 300);
+			this.setSize(Configuration.LISTEN_ANZEIGE_BREITE, Configuration.LISTEN_ANZEIGE_HOEHE);
 			this.setLocation(QViewer.LOCATION_X, QViewer.LOCATION_Y);
+			
 			this.addWindowListener(new WindowAdapter() {
 				public void windowClosing(WindowEvent evt) {
-					thisWindowClosing(evt);
+					System.exit(0);
 				}
 			});
-			LOCATION_X += (FRAMEWIDTH+10);
+			
+		    this.addComponentListener(new ComponentAdapter() {
+	            @Override
+	            public void componentResized(ComponentEvent e) {
+	                int width = getWidth();
+	                int height = getHeight();
+	                Configuration.LISTEN_ANZEIGE_BREITE = width;
+	                Configuration.LISTEN_ANZEIGE_HOEHE = height;
+	            }
+	        });			
+
+			LOCATION_X += (Configuration.LISTEN_ANZEIGE_BREITE+10);
 			LOCATION_Y += 0;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 	
-	private void thisWindowClosing(WindowEvent evt) {
-		System.exit(0);
-	}
 
 }

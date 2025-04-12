@@ -7,6 +7,8 @@ package linear;
 
 import java.awt.BorderLayout;
 import java.awt.Font;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.Iterator;
@@ -34,7 +36,6 @@ public class SViewer extends javax.swing.JFrame {
 	
 	private static int LOCATION_X = 0;
 	private static int LOCATION_Y = 0;
-	private int FRAMEWIDTH = Configuration.LISTEN_ANZEIGE_BREITE;
 	
 	private JScrollPane scrollPane;
 	private JTextArea textArea;
@@ -122,22 +123,30 @@ public class SViewer extends javax.swing.JFrame {
 				befehlLabel.setText("***");
 			}
 			pack();
-			this.setSize(FRAMEWIDTH, 300);
+			this.setSize(Configuration.LISTEN_ANZEIGE_BREITE, Configuration.LISTEN_ANZEIGE_HOEHE);
 			this.setLocation(SViewer.LOCATION_X, SViewer.LOCATION_Y);
+
 			this.addWindowListener(new WindowAdapter() {
 				public void windowClosing(WindowEvent evt) {
-					thisWindowClosing(evt);
+					System.exit(0);
 				}
 			});
-			LOCATION_X += (FRAMEWIDTH+10);
+
+		    this.addComponentListener(new ComponentAdapter() {
+	            @Override
+	            public void componentResized(ComponentEvent e) {
+	                int width = getWidth();
+	                int height = getHeight();
+	                Configuration.LISTEN_ANZEIGE_BREITE = width;
+	                Configuration.LISTEN_ANZEIGE_HOEHE = height;
+	            }
+	        });			
+			
+			LOCATION_X += (Configuration.LISTEN_ANZEIGE_BREITE+10);
 			LOCATION_Y += 0;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 	
-	private void thisWindowClosing(WindowEvent evt) {
-		System.exit(0);
-	}
-
 }

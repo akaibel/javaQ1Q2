@@ -46,10 +46,11 @@ public class Configuration {
 	
 	
 	/**
-	 * die Breite der angezeigten Listen 
+	 * die Breite und Hoehe der angezeigten Listen 
 	 * fuer ListWithViewer, QueueWithViewer, StackWithViewer
 	 */
-	public static final int LISTEN_ANZEIGE_BREITE = 200;
+	public static int LISTEN_ANZEIGE_BREITE = 200;
+	public static int LISTEN_ANZEIGE_HOEHE = 300;
 	
 	/**
 	 * Liest die Eigenschaften aus Configuration.txt
@@ -59,6 +60,14 @@ public class Configuration {
 		String SIZE = Properties.readProperty("FONT_SIZE");
 		if(SIZE != null) {
 			FONT_SIZE = Integer.parseInt(SIZE);
+		}
+		String ANZEIGE_BREITE = Properties.readProperty("LISTEN_ANZEIGE_BREITE");
+		if(ANZEIGE_BREITE != null) {
+			LISTEN_ANZEIGE_BREITE = Integer.parseInt(ANZEIGE_BREITE);
+		}
+		String ANZEIGE_HOEHE = Properties.readProperty("LISTEN_ANZEIGE_HOEHE");
+		if(ANZEIGE_BREITE != null) {
+			LISTEN_ANZEIGE_HOEHE = Integer.parseInt(ANZEIGE_HOEHE);
 		}
 		String LINEAR = Properties.readProperty("WARTEZEIT_LINEAR");
 		if(LINEAR != null) {
@@ -91,6 +100,8 @@ public class Configuration {
 
 	protected static void STORE_PROPERTIES() {
 		Properties.saveProperty("FONT_SIZE", ""+FONT_SIZE);
+		Properties.saveProperty("LISTEN_ANZEIGE_BREITE", ""+LISTEN_ANZEIGE_BREITE);
+		Properties.saveProperty("LISTEN_ANZEIGE_HOEHE", ""+LISTEN_ANZEIGE_HOEHE);
 		Properties.saveProperty("WARTEZEIT_LINEAR", ""+WARTEZEIT_LINEAR);
 		Properties.saveProperty("WARTEZEIT_BAEUME", ""+WARTEZEIT_BAEUME);
 		Properties.saveProperty("WARTEZEIT_GRAPH", ""+WARTEZEIT_GRAPH);		

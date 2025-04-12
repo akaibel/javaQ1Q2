@@ -2,6 +2,9 @@ package linear;
 
 
 import java.awt.Font;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
+import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.util.Iterator;
@@ -29,7 +32,6 @@ public class LViewer extends javax.swing.JFrame {
 	
 	private static int LOCATION_X = 0;
 	private static int LOCATION_Y = 0;
-	private int FRAMEWIDTH = Configuration.LISTEN_ANZEIGE_BREITE;
 	
 	private JScrollPane scrollPane;
 	private JTextArea textArea;
@@ -150,55 +152,24 @@ public class LViewer extends javax.swing.JFrame {
 					scrollPane.setViewportView(textArea);
 				}
 			}
-			this.addWindowListener(new WindowListener(){
-
-				
-				public void windowActivated(WindowEvent arg0) {
-					// TODO Auto-generated method stub
-					
-				}
-
-				
-				public void windowClosed(WindowEvent arg0) {
-					// TODO Auto-generated method stub
-					
-				}
-
-				
+			this.addWindowListener(new WindowAdapter(){
 				public void windowClosing(WindowEvent arg0) {
-					System.exit(0);
-					
+					System.exit(0);				
 				}
-
-				
-				public void windowDeactivated(WindowEvent arg0) {
-					// TODO Auto-generated method stub
-					
-				}
-
-				
-				public void windowDeiconified(WindowEvent arg0) {
-					// TODO Auto-generated method stub
-					
-				}
-
-				
-				public void windowIconified(WindowEvent arg0) {
-					// TODO Auto-generated method stub
-					
-				}
-
-				
-				public void windowOpened(WindowEvent arg0) {
-					// TODO Auto-generated method stub
-					
-				}
-				
 			});
+		    this.addComponentListener(new ComponentAdapter() {
+		            @Override
+		            public void componentResized(ComponentEvent e) {
+		                int width = getWidth();
+		                int height = getHeight();
+		                Configuration.LISTEN_ANZEIGE_BREITE = width;
+		                Configuration.LISTEN_ANZEIGE_HOEHE = height;
+		            }
+		        });			
 			pack();
-			this.setSize(FRAMEWIDTH, 400);
+			this.setSize(Configuration.LISTEN_ANZEIGE_BREITE, Configuration.LISTEN_ANZEIGE_HOEHE);
 			this.setLocation(LViewer.LOCATION_X, LViewer.LOCATION_Y);
-			LOCATION_X += (FRAMEWIDTH+10);
+			LOCATION_X += (Configuration.LISTEN_ANZEIGE_BREITE+10);
 			LOCATION_Y += 0;
 		} catch (Exception e) {
 			e.printStackTrace();
