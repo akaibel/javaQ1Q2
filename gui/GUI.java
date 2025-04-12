@@ -60,7 +60,6 @@ public class GUI extends JFrame {
     private Field[] fields;
     
     private Vector<SchriftgroessenLabel> labelVector;
-    private int fontSize = Configuration.FONT_SIZE;
     
     private static String linie = "-----------------------";
     
@@ -152,7 +151,7 @@ public class GUI extends JFrame {
                 this.getContentPane().add(methodLabel);
             }
 
-            schriftgroesseSetzen(fontSize);
+            schriftgroesseSetzen(Configuration.FONT_SIZE);
             pack();
             this.setLocation(xPosition, yPosition);
             xPosition += (this.getWidth() + 10);
@@ -186,8 +185,8 @@ public class GUI extends JFrame {
 
 			@Override
             public void actionPerformed(ActionEvent e) {
-                fontSize++;
-                schriftgroesseSetzen(fontSize);
+				Configuration.FONT_SIZE++;
+                schriftgroesseSetzen(Configuration.FONT_SIZE);
             }
         });
 
@@ -197,9 +196,8 @@ public class GUI extends JFrame {
 
 			@Override
             public void actionPerformed(ActionEvent e) {
-                fontSize--;
-                System.out.println("fontsize decrease");
-                schriftgroesseSetzen(fontSize);
+				Configuration.FONT_SIZE--;
+                schriftgroesseSetzen(Configuration.FONT_SIZE);
             }
         });
 

@@ -1,5 +1,6 @@
 package _config;
 
+import java.awt.Font;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -41,7 +42,8 @@ public class Configuration {
 	/**
 	 * die Schriftgroesse in den grafischen Oberflaechen
 	 */
-	public static final int FONT_SIZE = 12;
+	public static int FONT_SIZE = 12;
+	
 	
 	/**
 	 * die Breite der angezeigten Listen 
@@ -54,6 +56,10 @@ public class Configuration {
 	 * und sorgt dafuer, dass die Eigenschaften regelmaessig upgedated werden.
 	 */
 	public static void READ_AND_START_UPDATING_CONFIGURATION() {
+		String SIZE = Properties.readProperty("FONT_SIZE");
+		if(SIZE != null) {
+			FONT_SIZE = Integer.parseInt(SIZE);
+		}
 		String LINEAR = Properties.readProperty("WARTEZEIT_LINEAR");
 		if(LINEAR != null) {
 			WARTEZEIT_LINEAR = Integer.parseInt(LINEAR);
@@ -84,6 +90,7 @@ public class Configuration {
 
 
 	protected static void STORE_PROPERTIES() {
+		Properties.saveProperty("FONT_SIZE", ""+FONT_SIZE);
 		Properties.saveProperty("WARTEZEIT_LINEAR", ""+WARTEZEIT_LINEAR);
 		Properties.saveProperty("WARTEZEIT_BAEUME", ""+WARTEZEIT_BAEUME);
 		Properties.saveProperty("WARTEZEIT_GRAPH", ""+WARTEZEIT_GRAPH);		

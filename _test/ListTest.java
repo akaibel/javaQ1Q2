@@ -28,7 +28,7 @@ public class ListTest {
 	}
 	
 	public void ausgeben() {
-		System.out.println("*** ausgeben ***");
+		System.out.println("*** ausgeben() ***");
 		celebritiesList.toFirst();
 		while(celebritiesList.hasAccess()) {
 			Celebrity c = celebritiesList.getContent();
@@ -39,11 +39,13 @@ public class ListTest {
 
 	
 	public int gesamtVermoegen() {
+		System.out.println("*** gesamtVermoegen() ***");	
 		//TODO
 		return -1;
 	}
 	
 	public boolean enthaelt(String pName) {
+		System.out.println("*** enthaelt(\""+pName+") ***");
 		//TODO
 		// VORSICHT: Vergleich von Strings mit equals!!
 		// z.B. if(pName.equals(...)){
@@ -51,15 +53,18 @@ public class ListTest {
 	}
 	
 	public Celebrity derReichste() {
+		System.out.println("*** derReichste() ***");
 		//TODO
 		return null;
 	}
 	
 	public void loeschen(String pName) {
+		System.out.println("*** loeschen(\""+pName+"\") ***");		
 		//TODO
 	}
 	
 	public List<Celebrity> reicherAls(int pVermoegen){
+		System.out.println("*** reicherAls(\""+pVermoegen+"\") ***");
 		List<Celebrity> ergebnis = new ListWithViewer<>();
 		//TODO
 		return ergebnis;
@@ -67,6 +72,7 @@ public class ListTest {
 		
 	
 	public void einfuegen(String pName, String pVorname, int pVermoegen) {
+		System.out.println("*** einfuegen(\""+pName+"\", \""+pVorname+"\", "+pVermoegen+") ***");
 		//TODO
 	}
 	
@@ -75,6 +81,7 @@ public class ListTest {
 	 * @return
 	 */
 	public List<Celebrity> sortierenNachVermoegen() {
+		System.out.println("*** sortierenNachVermoegen() ***");
 		List<Celebrity> ergebnis = new ListWithViewer<>();
 		//TODO
 		return ergebnis;

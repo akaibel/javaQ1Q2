@@ -2,10 +2,6 @@ package linear;
 import java.awt.Font;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-/**
- * @author: a. kaibel, a.kaibel@googlemail.com
- * 
- */
 
 import java.util.Iterator;
 import java.util.Vector;
@@ -22,17 +18,9 @@ import _config.Configuration;
 
 
 /**
-* This code was edited or generated using CloudGarden's Jigloo
-* SWT/Swing GUI Builder, which is free for non-commercial
-* use. If Jigloo is being used commercially (ie, by a corporation,
-* company or business for any purpose whatever) then you
-* should purchase a license for each developer using Jigloo.
-* Please visit www.cloudgarden.com for details.
-* Use of Jigloo implies acceptance of these licensing terms.
-* A COMMERCIAL LICENSE HAS NOT BEEN PURCHASED FOR
-* THIS MACHINE, SO JIGLOO OR THIS CODE CANNOT BE USED
-* LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.
-*/
+ * @author: a. kaibel, a.kaibel@googlemail.com
+ * 
+ */
 public class QViewer extends javax.swing.JFrame {
 
 	private static Vector<QViewer> ALLFRAMES = new Vector<QViewer>();
@@ -122,21 +110,24 @@ public class QViewer extends javax.swing.JFrame {
 	}
 
 	private void initGUI() {
+		Configuration.READ_AND_START_UPDATING_CONFIGURATION();
+		Font fontPlain = new Font("Arial", Font.PLAIN, Configuration.FONT_SIZE);
+		Font fontBold = new Font("Arial", Font.BOLD, Configuration.FONT_SIZE);
 		try {
 			setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 			BoxLayout thisLayout = new BoxLayout(getContentPane(), javax.swing.BoxLayout.Y_AXIS);
 			getContentPane().setLayout(thisLayout);
 			{
 				befehlLabel = new JLabel();
+				befehlLabel.setFont(fontBold);
 				getContentPane().add(befehlLabel);
 				befehlLabel.setText("***");
-				befehlLabel.setPreferredSize(new java.awt.Dimension(FRAMEWIDTH-5, 20));
 			}
 			{
 				frontLabel = new JLabel();
+				frontLabel.setFont(fontBold);
 				getContentPane().add(frontLabel);
 				frontLabel.setText("front: null");
-				frontLabel.setPreferredSize(new java.awt.Dimension(FRAMEWIDTH-5, 20));
 			}
 			{
 				lastLabel = new JLabel();
@@ -149,8 +140,7 @@ public class QViewer extends javax.swing.JFrame {
 				getContentPane().add(scrollPane);
 				{
 					textArea = new JTextArea();
-					Font textFont = new Font("Arial", Font.PLAIN, Configuration.FONT_SIZE);
-		            textArea.setFont(textFont);
+		            textArea.setFont(fontPlain);
 					scrollPane.setViewportView(textArea);
 				}
 			}

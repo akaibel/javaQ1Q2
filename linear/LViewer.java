@@ -19,17 +19,9 @@ import _config.Configuration;
 
 
 /**
-* This code was edited or generated using CloudGarden's Jigloo
-* SWT/Swing GUI Builder, which is free for non-commercial
-* use. If Jigloo is being used commercially (ie, by a corporation,
-* company or business for any purpose whatever) then you
-* should purchase a license for each developer using Jigloo.
-* Please visit www.cloudgarden.com for details.
-* Use of Jigloo implies acceptance of these licensing terms.
-* A COMMERCIAL LICENSE HAS NOT BEEN PURCHASED FOR
-* THIS MACHINE, SO JIGLOO OR THIS CODE CANNOT BE USED
-* LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.
-*/
+ * @author: a. kaibel, a.kaibel@googlemail.com
+ * 
+ */
 public class LViewer extends javax.swing.JFrame {
 
 	private static Vector<LViewer> ALLFRAMES = new Vector<LViewer>();
@@ -128,29 +120,33 @@ public class LViewer extends javax.swing.JFrame {
 	}
 
 	private void initGUI() {
+		Font fontPlain = new Font("Arial", Font.PLAIN, Configuration.FONT_SIZE);
+		Font fontBold = new Font("Arial", Font.BOLD, Configuration.FONT_SIZE);
 		try {
 			setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 			BoxLayout thisLayout = new BoxLayout(getContentPane(), javax.swing.BoxLayout.Y_AXIS);
 			getContentPane().setLayout(thisLayout);
 			{
-				befehlLabel = new JLabel();
+				befehlLabel = new JLabel();			
+				befehlLabel.setFont(fontBold);
 				getContentPane().add(befehlLabel);
 				befehlLabel.setText("***");
-				befehlLabel.setPreferredSize(new java.awt.Dimension(FRAMEWIDTH-5, 20));
+				//befehlLabel.setPreferredSize(new java.awt.Dimension(FRAMEWIDTH-5, 20));
 			}
 			{
 				currentLabel = new JLabel();
+				currentLabel.setFont(fontBold);
 				getContentPane().add(currentLabel);
 				currentLabel.setText("current: null");
-				currentLabel.setPreferredSize(new java.awt.Dimension(166, 14));
+				//currentLabel.setPreferredSize(new java.awt.Dimension(166, 14));
+				
 			}
 			{
 				scrollPane = new JScrollPane();
 				getContentPane().add(scrollPane);
 				{
 					textArea = new JTextArea();
-					Font textFont = new Font("Arial", Font.PLAIN, Configuration.FONT_SIZE);
-		            textArea.setFont(textFont);
+		            textArea.setFont(fontPlain);
 					scrollPane.setViewportView(textArea);
 				}
 			}

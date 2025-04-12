@@ -30,19 +30,20 @@ public class StackTest {
 	 * Zum Test mehrfach aufrufen!!
 	 */
 	public void ausgeben() {
-		Stack<Celebrity> hilfsStack = new StackWithViewer<>();
-		System.out.println("*** ausgeben ***");
+		System.out.println("*** ausgeben() ***");
 		
 		//TODO
 	}
 	
 	public int gesamtVermoegen() {
+		System.out.println("*** gesamtVermoegen() ***");	
 		Stack<Celebrity> hilfsStack = new StackWithViewer<>();
 		//TODO
 		return -1;
 	}
 	
 	public boolean enthaelt(String pName) {
+		System.out.println("*** enthaelt(\""+pName+") ***");
 		Stack<Celebrity> hilfsStack = new StackWithViewer<>();
 		//TODO
 		// VORSICHT: Vergleich von Strings mit equals!!
@@ -51,23 +52,27 @@ public class StackTest {
 	}
 	
 	public Celebrity derReichste() {
+		System.out.println("*** derReichste() ***");
 		Stack<Celebrity> hilfsStack = new StackWithViewer<>();
 		//TODO
 		return null;
 	}
 	
 	public void loeschen(String pName) {
+		System.out.println("*** loeschen(\""+pName+"\") ***");		
 		Stack<Celebrity> hilfsStack = new StackWithViewer<>();
 		//TODO
 	}
 	
 	public Stack<Celebrity> reicherAls(int pVermoegen){
+		System.out.println("*** reicherAls(\""+pVermoegen+"\") ***");
 		Stack<Celebrity> ergebnis = new StackWithViewer<>();
 		//TODO
 		return ergebnis;
 	}
 	
 	public void einfuegen(String pName, String pVorname, int pVermoegen) {
+		System.out.println("*** einfuegen(\""+pName+"\", \""+pVorname+"\", "+pVermoegen+") ***");
 		//TODO
 	}
 	
@@ -76,6 +81,7 @@ public class StackTest {
 	 * @return
 	 */
 	public Stack<Celebrity> sortierenNachVermoegen() {
+		System.out.println("*** sortierenNachVermoegen() ***");
 		Stack<Celebrity> ergebnis = new StackWithViewer<>();
 		//TODO
 		return ergebnis;

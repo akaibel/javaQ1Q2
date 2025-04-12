@@ -1,15 +1,9 @@
 package _test;
 
 
-import _config.Configuration;
 import gui.GUI;
 import linear.Queue;
-import linear.Queue;
 import linear.QueueWithViewer;
-import linear.Queue;
-import linear.QueueWithViewer;
-import sonstiges.Auto;
-import sonstiges.Autos;
 import sonstiges.Celebrities;
 import sonstiges.Celebrity;
 
@@ -33,19 +27,20 @@ public class QueueTest {
 	 * Zum Test mehrfach aufrufen!!
 	 */
 	public void ausgeben() {
-		Queue<Celebrity> hilfsQueue = new QueueWithViewer<>();
-		System.out.println("*** ausgeben ***");
+		System.out.println("*** ausgeben() ***");
 		
 		//TODO
 	}
 	
 	public int gesamtVermoegen() {
+		System.out.println("*** gesamtVermoegen() ***");
 		Queue<Celebrity> hilfsQueue = new QueueWithViewer<>();
 		//TODO
 		return -1;
 	}
 	
 	public boolean enthaelt(String pName) {
+		System.out.println("*** enthaelt(\""+pName+") ***");
 		Queue<Celebrity> hilfsQueue = new QueueWithViewer<>();
 		//TODO
 		// VORSICHT: Vergleich von Strings mit equals!!
@@ -54,23 +49,27 @@ public class QueueTest {
 	}
 	
 	public Celebrity derReichste() {
+		System.out.println("*** derReichste() ***");
 		Queue<Celebrity> hilfsQueue = new QueueWithViewer<>();
 		//TODO
 		return null;
 	}
 	
 	public void loeschen(String pName) {
+		System.out.println("*** loeschen(\""+pName+"\") ***");		
 		Queue<Celebrity> hilfsQueue = new QueueWithViewer<>();
 		//TODO
 	}
 
 	public Queue<Celebrity> reicherAls(int pVermoegen){
+		System.out.println("*** reicherAls(\""+pVermoegen+"\") ***");
 		Queue<Celebrity> ergebnis = new QueueWithViewer<>();
 		//TODO
 		return ergebnis;
 	}
 		
 	public void einfuegen(String pName, String pVorname, int pVermoegen) {
+		System.out.println("*** einfuegen(\""+pName+"\", \""+pVorname+"\", "+pVermoegen+") ***");
 		//TODO
 	}
 	
@@ -79,6 +78,7 @@ public class QueueTest {
 	 * @return
 	 */
 	public Queue<Celebrity> sortierenNachVermoegen() {
+		System.out.println("*** sortierenNachVermoegen() ***");
 		Queue<Celebrity> ergebnis = new QueueWithViewer<>();
 		//TODO
 		return ergebnis;
