@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="mail1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/out/production/javaQ1Q2/_test/netz/mail/Telnet.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/production/javaQ1Q2/_test/netz/mail/mailServer.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

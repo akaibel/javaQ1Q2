@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Telnet1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/out/production/javaQ1Q2/_test/netz/gossip/Telnet.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
