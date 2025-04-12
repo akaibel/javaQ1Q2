@@ -18,8 +18,6 @@ public class GraphTest {
 
 	// Rahmenmethode zum testen
 	public List<Vertex> tiefendurchlaufVonKassel(){
-		karte.setAllVertexMarks(false);
-		karte.setAllEdgeMarks(false);
 		Vertex vKassel = karte.getVertex("Kassel");
 		return tiefendurchlauf(vKassel);
 	}
@@ -28,13 +26,20 @@ public class GraphTest {
 	private List<Vertex> tiefendurchlauf(Vertex pVertex) {
 		List<Vertex> ergebnis = new ListWithViewer<>();
 		// TODO selber programmieren!!!
+		ergebnis.append(pVertex);
+		pVertex.setMark(true);
+		List<Vertex> nachbarn = karte.getNeighbours(pVertex);
+		for(nachbarn.toFirst(); nachbarn.hasAccess(); nachbarn.next()) {
+			Vertex n = nachbarn.getContent();
+			if(n.isMarked() == false) {
+				ergebnis.concat(tiefendurchlauf(n));
+			}
+		}
 		return ergebnis;
 	}
 
 	// Rahmenmethode zum testen
 	public List<Vertex> breitendurchlaufVonKassel(){
-		karte.setAllVertexMarks(false);
-		karte.setAllEdgeMarks(false);
 		Vertex vKassel = karte.getVertex("Kassel");
 		return breitendurchlauf(vKassel);
 	}

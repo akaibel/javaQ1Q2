@@ -25,18 +25,18 @@ public class Configuration {
 	 * (TreeViewer)
 	 * langsam ablaufen 
 	 */
-	public static int WARTEZEIT_BAEUME = 280;
+	public static int WARTEZEIT_BAEUME = 100;
 	/**
 	 * Wartezeit, damit Graphen 
 	 * (GraphWithViewer) 
 	 * langsam ablaufen.
 	 */
-	public static int WARTEZEIT_GRAPH = 150;
+	public static int WARTEZEIT_GRAPH = 100;
 
 	/**
 	 * maximale Wartezeit, die vom Slider in GUI.java angezeigt werden kann.
 	 */
-	public static final int MAX_WARTEZEIT = 300;
+	public static final int MAX_WARTEZEIT = 200;
 	
 	/**
 	 * die Schriftgroesse in den grafischen Oberflaechen
@@ -78,7 +78,7 @@ public class Configuration {
             public void run() {
                 STORE_PROPERTIES();
             }
-        }, 5, 5, TimeUnit.SECONDS); // Initial delay of 5 seconds, then 5-second interval
+        }, 2, 2, TimeUnit.SECONDS); // Initial delay of 2 seconds, then 2-second interval
 
 	}
 

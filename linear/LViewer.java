@@ -48,6 +48,7 @@ public class LViewer extends javax.swing.JFrame {
 
 	public LViewer(List list) {
 		super();
+		Configuration.READ_AND_START_UPDATING_CONFIGURATION();
 		initGUI();
 		this.list = list;
 		ALLFRAMES.add(this);

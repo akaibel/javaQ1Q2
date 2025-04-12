@@ -56,6 +56,8 @@ public class BinaryTreeTest {
 		int ergebnis = 0;
 		// TODO programmieren:
 		// Abbruchbedingung, Wurzelbehandlung, 2 rekursive Aufrufe, Sachlogik
+		if(pTree.isEmpty()) return 0;
+		ergebnis = pTree.getContent() + summe(pTree.getLeftTree()) + summe(pTree.getRightTree());
 		return ergebnis;
 	}
 	

@@ -69,7 +69,7 @@ public class GUI extends JFrame {
     
     private boolean methodeInAusfuehrung;
 
-    private JSlider wartezeitSlider;
+    private JSlider speedSlider;
 	private static final int WARTEZEITSLIDER_PREFERRED_WIDTH = 50;
 
 	/**
@@ -206,25 +206,25 @@ public class GUI extends JFrame {
     }
 
     private void initSpeedSlider() {
-    	int speed = 50;  
+    	int wartezeit = 50;  
     	try {
     	        // Use reflection to update the specified static field in Configuration
     	        Field configField = Configuration.class.getDeclaredField(configurationWaitingTimeVariable);
     	        configField.setAccessible(true);
-    	        speed = configField.getInt(null);
+    	        wartezeit = configField.getInt(null);
     	    } catch (Exception ex) {
     	        ex.printStackTrace();
     	    }    	
-        wartezeitSlider = new JSlider(0, Configuration.MAX_WARTEZEIT, speed);
-        wartezeitSlider.setPreferredSize(new Dimension(WARTEZEITSLIDER_PREFERRED_WIDTH, wartezeitSlider.getPreferredSize().height));
-        wartezeitSlider.addChangeListener(e -> {
-            int newSpeed = wartezeitSlider.getValue();
-            updateWartezeit(newSpeed);
+        speedSlider = new JSlider(0, Configuration.MAX_WARTEZEIT, Configuration.MAX_WARTEZEIT - wartezeit);
+        speedSlider.setPreferredSize(new Dimension(WARTEZEITSLIDER_PREFERRED_WIDTH, speedSlider.getPreferredSize().height));
+        speedSlider.addChangeListener(e -> {
+            int newSpeed = speedSlider.getValue();
+            updateWartezeit(Configuration.MAX_WARTEZEIT- newSpeed);
         });
 
         JPanel sliderPanel = new JPanel();
         sliderPanel.setLayout(new BorderLayout());
-        sliderPanel.add(wartezeitSlider, BorderLayout.CENTER);
+        sliderPanel.add(speedSlider, BorderLayout.CENTER);
 
         this.getContentPane().add(sliderPanel);
         this.pack(); // Ensure the JFrame resizes to fit the slider
@@ -236,6 +236,14 @@ public class GUI extends JFrame {
 	        Field configField = Configuration.class.getDeclaredField(configurationWaitingTimeVariable);
 	        configField.setAccessible(true);
 	        configField.setInt(null, neueWartezeit); // Update static field
+	        // falls die Wartezeit bei Baeumen oder Graphen geaendert wird
+	        // dann auch die lineare Wartezeit veraendern.
+	        if(configurationWaitingTimeVariable.equals("WARTEZEIT_BAEUME") ||
+	        		configurationWaitingTimeVariable.equals("WARTEZEIT_GRAPH")) {
+		        configField = Configuration.class.getDeclaredField("WARTEZEIT_LINEAR");
+		        configField.setAccessible(true);
+		        configField.setInt(null, neueWartezeit); // Update static field	        	
+	        }
 	    } catch (Exception ex) {
 	        ex.printStackTrace();
 	    }    
