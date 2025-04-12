@@ -2,8 +2,10 @@ package _test;
 import linear.ListWithViewer;
 import linear.List;
 import sonstiges.Person;
-import datenbank.DatabaseConnector;
-import datenbank.QueryResult;
+import datenbank.sqlite.DatabaseConnector;
+import datenbank.sqlite.QueryResult;
+//import datenbank.mysql.DatabaseConnector;
+//import datenbank.mysql.QueryResult;
 import gui.GUI;
 
 /**
@@ -21,8 +23,15 @@ public class DatenbankTest {
 	private DatabaseConnector connector;
 	
 	public DatenbankTest() {
+		// ******* sqlite database *******
+		//                                ip  port database                                  user  password
+		connector = new DatabaseConnector("", -1, "datenbank/beispieldatenbank/schule.sqlite", "", "");
+
+		// ******* mysql Database *******
+		// WICHTIG: Dafuer auch die import-statements anpassen!
 		//                                    ip       port database  user   password
-		connector = new DatabaseConnector("127.0.0.1", 3306, "demo", "root", "");
+		//connector = new DatabaseConnector("127.0.0.1", 3306, "schule", "root", "");
+		
 		String errorMessage = connector.getErrorMessage();
 		if(errorMessage != null) System.err.println(errorMessage);
 	}
@@ -32,7 +41,7 @@ public class DatenbankTest {
 	 * Beispielmethode
 	 * gibt eine Liste zurueck, in der fuer jede Klasse angegeben ist,
 	 * wie viel Unterricht die Klasse in dem Fach hat.
-	 * @param pFach das Fach
+	 * @param pFach das Fach. Z.B. "Deutsch"
 	 * @return
 	 */
 	public ListWithViewer<String> klassenUnterricht(String pFach){

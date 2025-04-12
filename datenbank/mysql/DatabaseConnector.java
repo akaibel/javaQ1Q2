@@ -1,4 +1,4 @@
-package datenbank;
+package datenbank.mysql;
 
 import java.sql.*;
 
@@ -15,7 +15,7 @@ import linear.Queue;
  * Ein Objekt der Klasse DatabaseConnector ermoeglicht die Abfrage und Manipulation 
  * einer MySQL-Datenbank. 
  * Beim Erzeugen des Objekts wird eine Datenbankverbindung aufgebaut, so dass 
- * anschließend SQL-Anweisungen an diese Datenbank gerichtet werden koennen.
+ * anschliessend SQL-Anweisungen an diese Datenbank gerichtet werden koennen.
  * </p>
  * 
  * @author Qualitaets- und UnterstuetzungsAgentur - Landesinstitut fuer Schule

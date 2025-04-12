@@ -1,7 +1,7 @@
 package _test.datenbanken.chat;
 import linear.ListWithViewer;
-import datenbank.DatabaseConnector;
-import datenbank.QueryResult;
+import datenbank.mysql.DatabaseConnector;
+import datenbank.mysql.QueryResult;
 import gui.GUI;
 
 

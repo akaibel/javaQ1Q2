@@ -47,6 +47,8 @@ public class TreeViewer extends javax.swing.JFrame {
 	
 	private TreeViewer(int width, int height) {
 		super();
+		Configuration.READ_AND_START_UPDATING_CONFIGURATION();
+
 		initGUI(width,height);
 	}
 

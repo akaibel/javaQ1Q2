@@ -1,6 +1,6 @@
 package _test.datenbanken.tippgemeinschaft;
 
-import datenbank.DatabaseConnector;
+import datenbank.mysql.DatabaseConnector;
 
 public class Main {
 	private static final String dbUrl = "localhost";
