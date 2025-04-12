@@ -108,6 +108,7 @@ public class GViewer extends JFrame implements VertexListener, EdgeListener {
 	 */
 	@SuppressWarnings("serial")
 	public GViewer() {
+		Configuration.READ_AND_START_UPDATING_CONFIGURATION();
 		this.getContentPane().setLayout(new BorderLayout());
 		JLabel licenseLabel = new JLabel(licenseText);
 		licenseLabel.setFont(new Font("Arial", 10, 10));

@@ -1,4 +1,4 @@
-package datenbank;
+package datenbank.mysql;
 
 /**
  * <p>
