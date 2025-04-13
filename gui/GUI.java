@@ -12,6 +12,8 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
@@ -63,8 +65,19 @@ public class GUI extends JFrame {
     
     private static String linie = "-----------------------";
     
-    private static int xPosition = 100;
-    private static int yPosition = 300;
+    /**
+     * x-Position des ersten GUI Fensters
+     */
+    private static int xPositionFirst=-1;
+    
+    /**
+     * x-Position des naechsten GUI Fenster, das erzeugt wird
+     */
+    private static int xPosition;
+    /**
+     * y-Position von allen GUI-Fenstern
+     */
+    private static int yPosition;
     
     private boolean methodeInAusfuehrung;
 
@@ -92,7 +105,6 @@ public class GUI extends JFrame {
      */
     public GUI(Object pObject, String configurationWaitingTimeVariable) {
         super();
-        Configuration.READ_AND_START_UPDATING_CONFIGURATION();
         this.configurationWaitingTimeVariable = configurationWaitingTimeVariable;
         dasObjekt = pObject;
         labelVector = new Vector<>();
@@ -103,6 +115,12 @@ public class GUI extends JFrame {
     }
 
     private void initGUI() {
+        Configuration.READ_AND_START_UPDATING_CONFIGURATION();
+    	if(xPositionFirst == -1) {
+    		xPositionFirst = Configuration.GUI_POS_X;
+    		xPosition = Configuration.GUI_POS_X;
+    		yPosition = Configuration.GUI_POS_Y;
+    	}
         try {
             BoxLayout thisLayout = new BoxLayout(getContentPane(), javax.swing.BoxLayout.Y_AXIS);
             getContentPane().setLayout(thisLayout);
@@ -153,6 +171,7 @@ public class GUI extends JFrame {
 
             schriftgroesseSetzen(Configuration.FONT_SIZE);
             pack();
+
             this.setLocation(xPosition, yPosition);
             xPosition += (this.getWidth() + 10);
             setVisible(true);
@@ -200,6 +219,20 @@ public class GUI extends JFrame {
                 schriftgroesseSetzen(Configuration.FONT_SIZE);
             }
         });
+        
+	    this.addComponentListener(new ComponentAdapter() {
+            @Override
+            public void componentMoved(ComponentEvent e) {
+            	// nur die Position der ersten GUI wird in Configuration gespeichert.
+            	GUI firstGUI = alleGUIs.get(0);
+            	GUI currentGUI = GUI.this;
+            	if(firstGUI == currentGUI) {
+	                Configuration.GUI_POS_X = getLocation().x;
+	                Configuration.GUI_POS_Y = getLocation().y;          	
+            	}
+            }
+        });			
+
 
     }
 

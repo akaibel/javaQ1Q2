@@ -56,6 +56,12 @@ public class Configuration {
 	 */
 	public static int FONT_SIZE = 12;
 
+	/**
+	 * die Position des ersten GUI Objektes
+	 */
+	public static int GUI_POS_X = 100;
+	public static int GUI_POS_Y = 300;
+	
 
 	/**
 	 * die Breite und Hoehe der angezeigten Listen 
