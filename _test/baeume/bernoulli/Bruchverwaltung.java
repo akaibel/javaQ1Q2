@@ -73,7 +73,7 @@ public class Bruchverwaltung {
 			// *** x2 ***
 			listeA = listeB;
 		}
-		TreeViewer.showTree(baum, 1000,600);
+		TreeViewer.showTree(baum);
 	}
 
 

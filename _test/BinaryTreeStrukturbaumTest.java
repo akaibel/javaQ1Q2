@@ -26,7 +26,7 @@ public class BinaryTreeStrukturbaumTest {
 		BinaryTree b8 = new BinaryTree(5);
 		b5.setLeftTree(b7);
 		b5.setRightTree(b8);
-        TreeViewer.showTree(strukturbaum, 600,400);
+        TreeViewer.showTree(strukturbaum);
 	}
 	
 

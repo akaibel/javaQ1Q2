@@ -13,7 +13,7 @@ public class KettenbriefVerwaltung {
 		tueWas("Karl","l");
 		tueWas("Ina","r");
 		tueWas("Lisa","ll");
-		TreeViewer.showTree(teilnehmerBaum,600,400);
+		TreeViewer.showTree(teilnehmerBaum);
 	}
 	
 	/**

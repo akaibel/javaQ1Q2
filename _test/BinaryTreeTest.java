@@ -42,7 +42,7 @@ public class BinaryTreeTest {
         b62.setLeftTree(b61);
         b62.setRightTree(b71);
         b71.setRightTree(b73);
-        TreeViewer.showTree(suchbaum, 600, 400);
+        TreeViewer.showTree(suchbaum);
 	}
 	
 	// Rahmenmethode

@@ -26,6 +26,7 @@ public class Configuration {
 	 */
 	private static final String CONFIG_FILE = "_config/configuration.txt";
 
+
 	/**
 	 * Wartezeit, damit lineare Datenstrukturen 
 	 * (StackWithViewer, QueueWithViewer, ListWithViewer)
@@ -64,16 +65,20 @@ public class Configuration {
 	public static int LISTEN_ANZEIGE_HOEHE = 300;
 
 	/**
-	 * die Breite und Hoehe der angezeigten Baeume
+	 * die Breite Hoehe und Position des angezeigten Baums
 	 */
-	public static int BAUM_ANZEIGE_BREITE = 300;
+	public static int BAUM_ANZEIGE_BREITE = 600;
 	public static int BAUM_ANZEIGE_HOEHE = 300;
+	public static int BAUM_ANZEIGE_POS_X = 250;
+	public static int BAUM_ANZEIGE_POS_Y = 0;
 
 	/**
-	 * die Breite und Hoehe der angezeigten Graphen
+	 * die Breite Hoehe und Position der angezeigten Graphen
 	 */
-	public static int GRAPH_ANZEIGE_BREITE = 400;
-	public static int GRAPH_ANZEIGE_HOEHE = 400;
+	public static int GRAPH_ANZEIGE_BREITE = 600;
+	public static int GRAPH_ANZEIGE_HOEHE = 600;
+	public static int GRAPH_ANZEIGE_POS_X = 250;
+	public static int GRAPH_ANZEIGE_POS_Y = 0;
 
 	/**
 	 * Liest die Properties aus CONFIG_FILE 

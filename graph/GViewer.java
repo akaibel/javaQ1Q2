@@ -19,6 +19,8 @@ import java.awt.Font;
 import java.awt.Paint;
 import java.awt.Shape;
 import java.awt.Stroke;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Point2D;
 import java.util.Hashtable;
@@ -55,9 +57,6 @@ import edu.uci.ics.jung.visualization.transform.shape.GraphicsDecorator;
 import edu.uci.ics.jung.visualization.util.Animator;
 
 public class GViewer extends JFrame implements VertexListener, EdgeListener {
-
-
-	private static final int SIZE = 600;
 
 
 	private static int FRAME_NUMBER = 1;
@@ -109,6 +108,8 @@ public class GViewer extends JFrame implements VertexListener, EdgeListener {
 	@SuppressWarnings("serial")
 	public GViewer() {
 		Configuration.READ_AND_START_UPDATING_CONFIGURATION();
+		int hoehe = Configuration.GRAPH_ANZEIGE_HOEHE;
+		int breite = Configuration.GRAPH_ANZEIGE_BREITE;
 		this.getContentPane().setLayout(new BorderLayout());
 		JLabel licenseLabel = new JLabel(licenseText);
 		licenseLabel.setFont(new Font("Arial", 10, 10));
@@ -124,7 +125,7 @@ public class GViewer extends JFrame implements VertexListener, EdgeListener {
 		this.layoutType = GViewer.CIRCLE_LAYOUT;
 		layout = new CircleLayout<String,Integer>(graph);
 
-		vv =  new VisualizationViewer<String,Integer>(layout, new Dimension(SIZE,SIZE));
+		vv =  new VisualizationViewer<String,Integer>(layout, new Dimension(breite,hoehe));
 		vv.setBackground(Color.white);
 
 		vertexRenderer = new MyVertexRenderer<String,Integer>();
@@ -203,13 +204,30 @@ public class GViewer extends JFrame implements VertexListener, EdgeListener {
 		vv.setGraphMouse(graphMouse);
 		graphMouse.setMode(ModalGraphMouse.Mode.PICKING);
 
-		this.setTitle("Graph "+FRAME_NUMBER);
-		this.setLocation(FRAME_NUMBER*10, FRAME_NUMBER*10);
-		FRAME_NUMBER++;
 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+	    this.addComponentListener(new ComponentAdapter() {
+            @Override
+            public void componentResized(ComponentEvent e) {
+                int height = getHeight();
+                int width = getWidth();
+                Configuration.GRAPH_ANZEIGE_HOEHE = height;
+                Configuration.GRAPH_ANZEIGE_BREITE = width;
+            }
+            @Override
+            public void componentMoved(ComponentEvent e) {
+                Configuration.GRAPH_ANZEIGE_POS_X = getLocation().x;
+                Configuration.GRAPH_ANZEIGE_POS_Y = getLocation().y;          	
+            }
+            
+        });			
+		
+		
 		this.pack();
-		this.setLocation(450, 0);
+		this.setTitle("Graph "+FRAME_NUMBER);
+		this.setLocation(Configuration.GRAPH_ANZEIGE_POS_X+ FRAME_NUMBER*10, Configuration.GRAPH_ANZEIGE_POS_Y+FRAME_NUMBER*10);
+		FRAME_NUMBER++;
 		this.setVisible(true);
 		this.toFront();
 	}

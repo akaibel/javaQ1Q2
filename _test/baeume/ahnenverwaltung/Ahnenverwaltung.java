@@ -53,7 +53,7 @@ public class Ahnenverwaltung {
 	}
 
 	public void show(){
-		TreeViewer.showTree(ahnenBaum,600,400);
+		TreeViewer.showTree(ahnenBaum);
 	}
 
 	/**

@@ -17,7 +17,7 @@ public class BinarySearchTreeTestAutos {
 		autosBaum = new BinarySearchTree<>();
 		ListWithViewer<Auto> autosList = Autos.autoList();
 		this.einfuegenListe(autosList);
-		TreeViewer.showTree(autosBaum, 1000, 400);
+		TreeViewer.showTree(autosBaum);
 	}
 	
 	/**

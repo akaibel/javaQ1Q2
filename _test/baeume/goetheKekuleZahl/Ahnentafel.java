@@ -54,7 +54,7 @@ public class Ahnentafel {
 		BinaryTree<Individuum> wamBaum = new BinaryTree<Individuum>(wam);
 		amcBaum.setRightTree(wamBaum);
 
-		TreeViewer.showTree(ahnenBaum, 600,400);
+		TreeViewer.showTree(ahnenBaum);
 	}
 
 	private BinaryTree<Individuum> gibAhnenbaum() {
@@ -66,7 +66,9 @@ public class Ahnentafel {
 			Stack<Boolean> pfadZumIndividuum = new Stack<Boolean>();
 			int tempKekule = pKekule;
 			while (tempKekule > 1) {
-				pfadZumIndividuum.push(new Boolean(tempKekule % 2 == 0));
+				// (tempKekule % 2 == 0) 
+				// wertet sich zu true bzw. false aus
+				pfadZumIndividuum.push((tempKekule % 2 == 0));
 				tempKekule = tempKekule / 2;
 			}
 			BinaryTree<Individuum> aktTeilbaum = gibAhnenbaum();

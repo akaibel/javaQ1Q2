@@ -9,7 +9,7 @@ import graph.GraphWithViewer;
 import linear.ListWithViewer;
 
 public class DijkstraTest {
-   private GraphWithViewer graph;
+   private GraphWithViewer karte;
    private List<DijkstraInfo> gelbeListe;
    private List<DijkstraInfo> roteListe;
   
@@ -20,7 +20,7 @@ public class DijkstraTest {
    public List<DijkstraInfo> dijkstraAlgorithmus(String sStart){
        roteListe = new ListWithViewer<DijkstraInfo>();
        gelbeListe = new ListWithViewer<DijkstraInfo>();
-       Vertex vStart = graph.getVertex(sStart);
+       Vertex vStart = karte.getVertex(sStart);
        DijkstraInfo dStart = new DijkstraInfo(vStart,0,null);
        dStart.setDistanz(0);
        gelbeListe.append(dStart);
@@ -71,81 +71,90 @@ public class DijkstraTest {
    }
    
     public void initMap(){
-            graph = new GraphWithViewer();
+            karte = new GraphWithViewer();
             Vertex kiel = new Vertex("Kiel");
-            graph.addVertex(kiel);
+            karte.addVertex(kiel);
             Vertex luebeck = new Vertex("Luebeck");
-            graph.addVertex(luebeck);
+            karte.addVertex(luebeck);
             Vertex hamburg = new Vertex("Hamburg");
-            graph.addVertex(hamburg);
+            karte.addVertex(hamburg);
             Vertex berlin = new Vertex("Berlin");
-            graph.addVertex(berlin);
+            karte.addVertex(berlin);
             Vertex bremen = new Vertex("Bremen");
-            graph.addVertex(bremen);
+            karte.addVertex(bremen);
             Vertex hannover = new Vertex("Hannover");
-            graph.addVertex(hannover);
+            karte.addVertex(hannover);
             Vertex dortmund = new Vertex("Dortmund");
-            graph.addVertex(dortmund);
+            karte.addVertex(dortmund);
             Vertex bochum = new Vertex("Bochum");
-            graph.addVertex(bochum);
+            karte.addVertex(bochum);
             Vertex koeln = new Vertex("Koeln");
-            graph.addVertex(koeln);
+            karte.addVertex(koeln);
             Vertex bonn = new Vertex("Bonn");
-            graph.addVertex(bonn);
+            karte.addVertex(bonn);
             Vertex mainz = new Vertex("Mainz");
-            graph.addVertex(mainz);
+            karte.addVertex(mainz);
             Vertex frankfurt = new Vertex("Frankfurt");
-            graph.addVertex(frankfurt);
+            karte.addVertex(frankfurt);
             Vertex kassel = new Vertex("Kassel");
-            graph.addVertex(kassel);
+            karte.addVertex(kassel);
             Vertex wuerzburg = new Vertex("Wuerzburg");
-            graph.addVertex(wuerzburg);
+            karte.addVertex(wuerzburg);
             Vertex leipzig = new Vertex("Leipzig");
-            graph.addVertex(leipzig);
+            karte.addVertex(leipzig);
             Vertex nuernberg = new Vertex("Nuernberg");
-            graph.addVertex(nuernberg);
+            karte.addVertex(nuernberg);
             Vertex stuttgart = new Vertex("Stuttgart");
-            graph.addVertex(stuttgart);
+            karte.addVertex(stuttgart);
             Vertex muenchen = new Vertex("Muenchen");
-            graph.addVertex(muenchen);
+            karte.addVertex(muenchen);
             Vertex karlsruhe = new Vertex("Karlsruhe");
-            graph.addVertex(karlsruhe);
+            karte.addVertex(karlsruhe);
            
-            graph.addEdge(new Edge(kiel, hamburg, 97));
-            graph.addEdge(new Edge(kiel, luebeck, 84));
-            graph.addEdge(new Edge(luebeck, hamburg, 74));
-            graph.addEdge(new Edge(luebeck, berlin, 284));
-            graph.addEdge(new Edge(berlin, hamburg, 289));
-            graph.addEdge(new Edge(hamburg, bremen, 119));
-            graph.addEdge(new Edge(bremen, hannover, 122));
-            graph.addEdge(new Edge(hannover, hamburg, 150));
-            graph.addEdge(new Edge(berlin, hannover, 290));
-            graph.addEdge(new Edge(berlin, leipzig, 188));
-            graph.addEdge(new Edge(hannover, kassel, 167));
-            graph.addEdge(new Edge(leipzig, kassel, 250));
-            graph.addEdge(new Edge(kassel, dortmund, 160));
-            graph.addEdge(new Edge(dortmund, bremen, 234));
-            graph.addEdge(new Edge(dortmund, hannover, 210));
-            graph.addEdge(new Edge(dortmund, bochum, 22));
-            graph.addEdge(new Edge(dortmund, koeln, 107));
-            graph.addEdge(new Edge(koeln, bochum, 82));
-            graph.addEdge(new Edge(koeln, bonn, 29));
-            graph.addEdge(new Edge(bonn, mainz, 169));
-            graph.addEdge(new Edge(frankfurt, mainz, 45));
-            graph.addEdge(new Edge(frankfurt, kassel, 193));
-            graph.addEdge(new Edge(leipzig, nuernberg, 278));
-            graph.addEdge(new Edge(kassel, wuerzburg, 209));
-            graph.addEdge(new Edge(wuerzburg, nuernberg, 110));
-            graph.addEdge(new Edge(wuerzburg, frankfurt, 119));
-            graph.addEdge(new Edge(nuernberg, muenchen, 166));
-            graph.addEdge(new Edge(muenchen, stuttgart, 223));
-            graph.addEdge(new Edge(nuernberg, stuttgart, 208));
-            graph.addEdge(new Edge(stuttgart, karlsruhe, 82));
-            graph.addEdge(new Edge(karlsruhe, frankfurt, 147));
-            graph.addEdge(new Edge(frankfurt, koeln, 189));
-            graph.switchToISOMLayout();
+            karte.addEdge(new Edge(kiel, hamburg, 97));
+            karte.addEdge(new Edge(kiel, luebeck, 84));
+            karte.addEdge(new Edge(luebeck, hamburg, 74));
+            karte.addEdge(new Edge(luebeck, berlin, 284));
+            karte.addEdge(new Edge(berlin, hamburg, 289));
+            karte.addEdge(new Edge(hamburg, bremen, 119));
+            karte.addEdge(new Edge(bremen, hannover, 122));
+            karte.addEdge(new Edge(hannover, hamburg, 150));
+            karte.addEdge(new Edge(berlin, hannover, 290));
+            karte.addEdge(new Edge(berlin, leipzig, 188));
+            karte.addEdge(new Edge(hannover, kassel, 167));
+            karte.addEdge(new Edge(leipzig, kassel, 250));
+            karte.addEdge(new Edge(kassel, dortmund, 160));
+            karte.addEdge(new Edge(dortmund, bremen, 234));
+            karte.addEdge(new Edge(dortmund, hannover, 210));
+            karte.addEdge(new Edge(dortmund, bochum, 22));
+            karte.addEdge(new Edge(dortmund, koeln, 107));
+            karte.addEdge(new Edge(koeln, bochum, 82));
+            karte.addEdge(new Edge(koeln, bonn, 29));
+            karte.addEdge(new Edge(bonn, mainz, 169));
+            karte.addEdge(new Edge(frankfurt, mainz, 45));
+            karte.addEdge(new Edge(frankfurt, kassel, 193));
+            karte.addEdge(new Edge(leipzig, nuernberg, 278));
+            karte.addEdge(new Edge(kassel, wuerzburg, 209));
+            karte.addEdge(new Edge(wuerzburg, nuernberg, 110));
+            karte.addEdge(new Edge(wuerzburg, frankfurt, 119));
+            karte.addEdge(new Edge(nuernberg, muenchen, 166));
+            karte.addEdge(new Edge(muenchen, stuttgart, 223));
+            karte.addEdge(new Edge(nuernberg, stuttgart, 208));
+            karte.addEdge(new Edge(stuttgart, karlsruhe, 82));
+            karte.addEdge(new Edge(karlsruhe, frankfurt, 147));
+            karte.addEdge(new Edge(frankfurt, koeln, 189));
+            karte.switchToISOMLayout();
          }
-    
+  
+	/**
+	 * ordnet die Knoten auf der Karte neu an.
+	 * fuer den Fall, dass es da Ueberschneidungen gibt.
+	 */
+	public void _neuAnordnen() {
+		karte.switchToISOMLayout();
+	}
+	
+
     public static void main(String[] args) {
        DijkstraTest dt = new DijkstraTest();
        new GUI(dt);

@@ -4,20 +4,41 @@ import gui.GUI;
 import linear.List;
 import linear.ListWithViewer;
 import baeume.BinarySearchTree;
+import baeume.BinaryTree;
+import baeume.TreeViewer;
 
 public class Bibliothek{
-	  
-    //TODO Attribut buecherBaum
+	
+	/**
+	 * die Liste der Buecher, die in den Baum sollen.
+	 */
+    private List<Buch> buecherListe;
+    
+    //TODO  BinarySearchTree statt BinaryTree 
+    private BinaryTree<Buch> buecherBaum;
 
     public Bibliothek(){
+    	buecherListe = new ListWithViewer<>();
+    	buecherListe.concat(AlleBuecher.getListe());
+
     	//TODO buecherBaum als leeren Baum erzeugen
-    	uebertrageListeInBaum(BuecherListe.getListe());
+
+    	TreeViewer.showTree(buecherBaum);
      }  
 
-    public void uebertrageListeInBaum(List<Buch> buecherListe){
+    /**
+     * in den buecherBaum sollen alle Buecher aus buecherListe
+     * in alphabetischer Reihenfolge eingefuegt werden.
+     */
+    public void uebertrageListeInBaum(){
     	//TODO
     }
    
+    /**
+     * sucht ein Buch nach dem Titel und gibt es zurueck
+     * @param pTitel
+     * @return
+     */
     public Buch suche(String pTitel){
     	Buch ergebnis = null;
         //TODO  ein Dummy-Buch mit dem richtigen Titel erzeugen!
@@ -25,6 +46,12 @@ public class Bibliothek{
         return ergebnis;
     }
     
+    /**
+     * Sucht alle Buecher, die in einem Regal stehen 
+     * und gibt sie als Liste zurueck.
+     * @param pRegalNr
+     * @return
+     */
     public ListWithViewer<Buch> suche(int pRegalNr){
     	ListWithViewer<Buch> ergebnis = new ListWithViewer<Buch>();
     	//TODO eine REKURSIVE Methode aufrufen!

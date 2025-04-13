@@ -37,6 +37,16 @@ public class GraphTestMatrix {
 		karte.switchToISOMLayout();
 	}
 
+	/**
+	 * ordnet die Knoten auf der Karte neu an.
+	 * fuer den Fall, dass es da Ueberschneidungen gibt.
+	 */
+	public void _neuAnordnen() {
+		karte.switchToISOMLayout();
+	}
+	
+	
+	
 	public static void main(String[] args) {
 		GraphTestMatrix gtm = new GraphTestMatrix();
 		new GUI(gtm, "WARTEZEIT_GRAPH");

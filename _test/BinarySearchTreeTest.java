@@ -11,13 +11,13 @@ import baeume.TreeViewer;
 public class BinarySearchTreeTest {
 	//TODO BinarySearchTree parametrisieren!
 	public BinarySearchTree celebrityBaum;
-	
+	private ListWithViewer<Celebrity> celebritiesList;
 	
 	public BinarySearchTreeTest(){
 		celebrityBaum = new BinarySearchTree<>();
-		ListWithViewer<Celebrity> celebritiesList = Celebrities.celebritiesList();
+		celebritiesList = Celebrities.celebritiesList();
 		this.einfuegenListe(celebritiesList);
-		TreeViewer.showTree(celebrityBaum, 1000, 400);
+		TreeViewer.showTree(celebrityBaum);
 	}
 	
 	/**
@@ -26,7 +26,6 @@ public class BinarySearchTreeTest {
 	 */
 	private void einfuegenListe(List<Celebrity> pList){
 		System.out.println("einfuegenListe(pList)");
-		//TODO programmieren!
 	}
 	
 	public void einfuegen(String pName, String pVorname, int pGeld){
