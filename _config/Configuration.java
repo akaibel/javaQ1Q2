@@ -1,6 +1,12 @@
 package _config;
 
 import java.awt.Font;
+import java.io.File;
+import java.io.IOException;
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -14,6 +20,11 @@ import java.util.concurrent.TimeUnit;
  *
  */
 public class Configuration {
+
+	/**
+	 * diese Konstante kann NICHT von Werten in configuration.txt ueberschrieben werden.
+	 */
+	private static final String CONFIG_FILE = "_config/configuration.txt";
 
 	/**
 	 * Wartezeit, damit lineare Datenstrukturen 
@@ -37,73 +48,111 @@ public class Configuration {
 	/**
 	 * maximale Wartezeit, die vom Slider in GUI.java angezeigt werden kann.
 	 */
-	public static final int MAX_WARTEZEIT = 200;
-	
+	public static int MAX_WARTEZEIT = 200;
+
 	/**
 	 * die Schriftgroesse in den grafischen Oberflaechen
 	 */
 	public static int FONT_SIZE = 12;
-	
-	
+
+
 	/**
 	 * die Breite und Hoehe der angezeigten Listen 
 	 * fuer ListWithViewer, QueueWithViewer, StackWithViewer
 	 */
 	public static int LISTEN_ANZEIGE_BREITE = 200;
 	public static int LISTEN_ANZEIGE_HOEHE = 300;
-	
+
 	/**
-	 * Liest die Eigenschaften aus Configuration.txt
-	 * und sorgt dafuer, dass die Eigenschaften regelmaessig upgedated werden.
+	 * die Breite und Hoehe der angezeigten Baeume
+	 */
+	public static int BAUM_ANZEIGE_BREITE = 300;
+	public static int BAUM_ANZEIGE_HOEHE = 300;
+
+	/**
+	 * die Breite und Hoehe der angezeigten Graphen
+	 */
+	public static int GRAPH_ANZEIGE_BREITE = 400;
+	public static int GRAPH_ANZEIGE_HOEHE = 400;
+
+	/**
+	 * Liest die Properties aus CONFIG_FILE 
+	 * und speichert sie in den Variablen dieser Klasse
+	 * sorgt dafuer, dass die Variablen dieser Klasse 
+	 * regelmaessig in CONFIG_FILE geschrieben werden.
+	 * (fuer den Fall, dass sie sich aendern.)
 	 */
 	public static void READ_AND_START_UPDATING_CONFIGURATION() {
-		String SIZE = Properties.readProperty("FONT_SIZE");
-		if(SIZE != null) {
-			FONT_SIZE = Integer.parseInt(SIZE);
+		CREATE_CONFIG_FILE_IF_DOESNT_EXIST();
+		Map<String,String> propertiesFromFile = Properties.readAllProperties(CONFIG_FILE);
+		for (Field field : Configuration.class.getDeclaredFields()) {
+			// Check if the field is static and of type int
+			if (Modifier.isStatic(field.getModifiers()) && field.getType() == int.class) {
+				try {
+					field.setAccessible(true); // In case it's private
+					//System.out.println(field.getName() + " = " + field.get(null));
+					String key = field.getName();
+					int value_from_config_file = Integer.parseInt(propertiesFromFile.get(key));
+					field.setInt(null, value_from_config_file); // Set static int field to 42
+				} catch (Exception e) {
+					System.err.println("Configuration.java: Cannot access field: " + field.getName());
+				}
+			}
 		}
-		String ANZEIGE_BREITE = Properties.readProperty("LISTEN_ANZEIGE_BREITE");
-		if(ANZEIGE_BREITE != null) {
-			LISTEN_ANZEIGE_BREITE = Integer.parseInt(ANZEIGE_BREITE);
-		}
-		String ANZEIGE_HOEHE = Properties.readProperty("LISTEN_ANZEIGE_HOEHE");
-		if(ANZEIGE_BREITE != null) {
-			LISTEN_ANZEIGE_HOEHE = Integer.parseInt(ANZEIGE_HOEHE);
-		}
-		String LINEAR = Properties.readProperty("WARTEZEIT_LINEAR");
-		if(LINEAR != null) {
-			WARTEZEIT_LINEAR = Integer.parseInt(LINEAR);
-		}
-		String BAEUME = Properties.readProperty("WARTEZEIT_BAEUME");
-		if(BAEUME != null) {
-			WARTEZEIT_BAEUME = Integer.parseInt(BAEUME);
-		}
-		String GRAPH = Properties.readProperty("WARTEZEIT_GRAPH");
-		if(GRAPH != null) {
-			WARTEZEIT_GRAPH = Integer.parseInt(GRAPH);
-		}
-		
+
 		//Dafuer sorgen, dass die Eigenschaften regelmaessig gespeichert werden, wenn sie geaendert werden.
-			
-	    // Create a ScheduledExecutorService
-        ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
-        
-        // Schedule the storeProperties method to be called every 5 seconds
-        scheduler.scheduleAtFixedRate(new Runnable() {
-            @Override
-            public void run() {
-                STORE_PROPERTIES();
-            }
-        }, 2, 2, TimeUnit.SECONDS); // Initial delay of 2 seconds, then 2-second interval
 
+		// Create a ScheduledExecutorService
+		ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+
+		// Schedule the storeProperties method to be called every 5 seconds
+		scheduler.scheduleAtFixedRate(new Runnable() {
+			@Override
+			public void run() {
+				SAVE_PROPERTIES();
+			}
+		}, 2, 2, TimeUnit.SECONDS); // Initial delay of 2 seconds, then 2-second interval
 	}
 
-
-	protected static void STORE_PROPERTIES() {
-		Properties.saveProperty("FONT_SIZE", ""+FONT_SIZE);
-		Properties.saveProperty("LISTEN_ANZEIGE_BREITE", ""+LISTEN_ANZEIGE_BREITE);
-		Properties.saveProperty("LISTEN_ANZEIGE_HOEHE", ""+LISTEN_ANZEIGE_HOEHE);
-		Properties.saveProperty("WARTEZEIT_LINEAR", ""+WARTEZEIT_LINEAR);
-		Properties.saveProperty("WARTEZEIT_BAEUME", ""+WARTEZEIT_BAEUME);
-		Properties.saveProperty("WARTEZEIT_GRAPH", ""+WARTEZEIT_GRAPH);		
+	private static void CREATE_CONFIG_FILE_IF_DOESNT_EXIST() {
+		File file = new File(CONFIG_FILE);
+		if (!file.exists()) {
+			try {
+				boolean created = file.createNewFile();
+				if (created) {
+					System.err.println("Configuration.java: Created file: " + CONFIG_FILE);
+				} else {
+					System.err.println("Configuration.java: File "+CONFIG_FILE+" cannnot be created!");
+				}
+			} catch (IOException e) {
+				System.err.println("Configuration.java: An error occurred while creating file: "+CONFIG_FILE);
+				e.printStackTrace();
+			}
+		}
 	}
+
+	/**
+	 * schreibt die Werte von allen Variablen dieser Klasse in CONFIG_FILE
+	 */
+	public static void SAVE_PROPERTIES() {
+		// properties aus den Variablen sammeln
+		Map<String,String> propertiesFromVariables = new HashMap<>();
+		for (Field field : Configuration.class.getDeclaredFields()) {
+			// Check if the field is static
+			if (Modifier.isStatic(field.getModifiers())) {
+				try {
+					field.setAccessible(true); // in case it's private
+					Object value = field.get(null); // null because it's static
+					//System.out.println(field.getName() + " = " + value);
+					String key = field.getName();
+					propertiesFromVariables.put(key, value.toString());
+				} catch (IllegalAccessException e) {
+					System.err.println("Configuration.java: Cannot access field: " + field.getName());
+				}
+			}
+		}
+		// jetzt die properties schreiben.
+		Properties.saveProperties(propertiesFromVariables, CONFIG_FILE);
+	}
+
 }
