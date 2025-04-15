@@ -224,8 +224,10 @@ public class GUI extends JFrame {
             @Override
             public void componentMoved(ComponentEvent e) {
             	// nur die Position der ersten GUI wird in Configuration gespeichert.
-            	GUI firstGUI = alleGUIs.get(0);
             	GUI currentGUI = GUI.this;
+            	GUI firstGUI = currentGUI;
+            	if(!alleGUIs.isEmpty())
+            		firstGUI = alleGUIs.get(0);
             	if(firstGUI == currentGUI) {
 	                Configuration.GUI_POS_X = getLocation().x;
 	                Configuration.GUI_POS_Y = getLocation().y;          	

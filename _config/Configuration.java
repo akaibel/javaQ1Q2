@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Executors;
@@ -125,22 +126,37 @@ public class Configuration {
 		}, 2, 2, TimeUnit.SECONDS); // Initial delay of 2 seconds, then 2-second interval
 	}
 
+
 	private static void CREATE_CONFIG_FILE_IF_DOESNT_EXIST() {
 		File file = new File(CONFIG_FILE);
 		if (!file.exists()) {
 			try {
+		        File parentDir = file.getParentFile();
+		        if (parentDir != null && !parentDir.exists()) {
+		            boolean dirsCreated = parentDir.mkdirs();
+		            if (dirsCreated) {
+		                System.err.println("Configuration.java: Created folder(s): "+parentDir.getPath());
+		            }
+		        }				
 				boolean created = file.createNewFile();
 				if (created) {
 					System.err.println("Configuration.java: Created file: " + CONFIG_FILE);
 				} else {
 					System.err.println("Configuration.java: File "+CONFIG_FILE+" cannnot be created!");
+			        String rootPath = Paths.get("").toAbsolutePath().toString();
+			        System.err.println("The rootPath is: "+rootPath);
+			        System.err.println("Maybe the relative path to Configuration.java is not accessible from there");
 				}
 			} catch (IOException e) {
 				System.err.println("Configuration.java: An error occurred while creating file: "+CONFIG_FILE);
-				e.printStackTrace();
+		        String rootPath = Paths.get("").toAbsolutePath().toString();
+		        System.err.println("The rootPath is: "+rootPath);
+		        System.err.println("Maybe the relative path to Configuration.java is not accessible from there");
+				//e.printStackTrace();
 			}
 		}
 	}
+
 
 	/**
 	 * schreibt die Werte von allen Variablen dieser Klasse in CONFIG_FILE
