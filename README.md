@@ -32,8 +32,14 @@ eclipse:
 file -> new -> Java project
 As location select the folder "javaQ1Q2"
 
-other IDEs:
-- Make sure, that the Main folder of the project is the folder for source files (.java files).
-- make sure, that the .jar files in the folder libraries are part of the project.
+IntelliJ:
+File -> Open
+Select folder "javaQ1Q2"
 
+Visual Studio Code:
+Open VS Code
+Pull the folder "javaQ1Q2" into VS Code
+
+### Recommendation
+Read documents in folder _readme!!
 
