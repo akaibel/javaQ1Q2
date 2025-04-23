@@ -1,4 +1,4 @@
-# MyProjectName
+# javaQ1Q2
 
 Dieses Projekt bietet Programmiervorlagen für den Informatikunterricht in der Q1 und Q2 in NRW.
 Dafür wurden die vom Land NRW vorgegebenen Schnittstellen für Datenstrukturen (Stack, Queue, List, BinaryTree, BinarySearchTree, Graph) um graphische Oberflächen ergänzt, die die selbe Schnittstellenbeschreibung haben.
