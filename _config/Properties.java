@@ -100,15 +100,33 @@ public class Properties {
 			String line;
 			while ((line = reader.readLine()) != null) {
 				String[] splits = line.replaceAll(" ","").split("=");
-				String key = splits[0];
-				String value = splits[1];
-				String newValue = properties.get(key);
-				if(newValue != null) {
-					value = newValue;
+				switch(splits.length) {
+					case 0:
+					case 1:{
+						System.err.println("Properties.java saveProperties()");
+						System.err.println("folgende Zeile ohne = wird geloescht:");
+						System.err.println(line);
+						continue;
+					}
+					case 2:{
+						String key = splits[0];
+						String value = splits[1];
+						String newValue = properties.get(key);
+						if(newValue != null) {
+							value = newValue;
+						}
+						lines.add(key+"="+value);
+						// remove the handled property
+						properties.remove(key);	
+						continue;
+					}
+					default:{
+						System.err.println("Properties.java saveProperties()");
+						System.err.println("folgende Zeile mit mehreren = wird geloescht:");
+						System.err.println(line);
+						continue;
+					}
 				}
-				lines.add(key+"="+value);
-				// remove the handled property
-				properties.remove(key);
 			}
 
 			// now add properties that do not exist in the file
@@ -123,6 +141,7 @@ public class Properties {
 		}
 
 		// Write back all lines
+		// Content of the file will be overwritten.
 		try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
 			for (String line : lines) {
 				writer.write(line);
@@ -159,25 +178,25 @@ public class Properties {
 		}
 		return result;
 	}
-
-	public static void main(String[] args) {
-		String fileName = "_config/configuration.txt";
-		Map<String,String> newProperties = new HashMap<>();
-		newProperties.put("GRAPH_ANZEIGE_HOEHE", ""+400);
-		newProperties.put("test", ""+42);
-		newProperties.put("WARTEZEIT_GRAPH", ""+30);
-		Properties.saveProperties(newProperties, fileName);
-		
-		Map<String,String> allproperties = Properties.readAllProperties(fileName);
-		// now add properties that do not exist in the file
-		Iterator<Map.Entry<String, String>> iterator = allproperties.entrySet().iterator();
-		while (iterator.hasNext()) {
-			Map.Entry<String, String> entry = iterator.next();
-			//System.out.println(entry.getKey()+"="+entry.getValue());
+	
+	public static void printPropertiesFile(String fileName) {
+		System.out.println("*** content of: "+fileName+" ***");
+		try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+			String line;
+			while ((line = reader.readLine()) != null) {
+				System.out.println(line);
+			}
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
-		
 	}
+
 
 }
 
