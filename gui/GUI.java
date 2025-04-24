@@ -2,10 +2,23 @@ package gui;
 
 
 
-/**
- * (c) Andreas Kaibel
- * Siebengebirgsgymnasium Bad Honnef
- * a.kaibel@googlemail.com
+/*
+ * This file is part of javaQ1Q2.
+ * 
+ * javaQ1Q2 is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * javaQ1Q2 is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with javaQ1Q2. If not, see <https://www.gnu.org/licenses/>.
+ * 
+ * Copyright (C) 2025 Andreas Kaibel a.kaibel@googlemail.com
  */
 import java.awt.BorderLayout;
 import java.awt.Color;
