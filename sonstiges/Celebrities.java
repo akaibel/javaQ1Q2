@@ -11,14 +11,15 @@ import linear.StackWithViewer;
 public class Celebrities {
 	
 	
-	private static String[] vornamen  = { "Steven"    , "Oprah"   , "George" , "Rihanna"  , "Xatar" , "JK"     , "Heidi"  , "Sebastian" , "Jennifer" , "Neuer"  , "Cristiano", "Keanu"  }; 
-	private static String[] namen     = { "Spielberg" , "Winfrey" , "Lucas"  , "Rihanna"  , "Giware Hajabi", "Rowling", "Klum"   , "Vettel"    , "Lopez"    , "Manuel" , "Ronaldo"  , "Reeves" };
-	private static int[]    vermoegen = { 8000        , 3500      , 10000    , 1700       , 8       , 1000     ,  160     , 140         , 400        , 40       , 500        , 380      };
+	private static String[] vornamen  = { "Timothee" , "Jennifer" , "Tom"    , "Taylor" , "Nena"   ,  "Khaby"    , "Pamela"    , "JK"         , "Sebastian" , "Coco"  , "Florian" , "Dennis"    }; 
+	private static String[] namen     = { "Chalamet" , "Lawrence" , "Cruise" , "Swift"  , "Nena"   ,  "Lame"     , "Reif"      , "Rowling"    , "Vettel"    , "Gauff" , "Wirtz"   , "Schroeder" };
+	private static int[]    vermoegen = { 25         , 140        , 891      , 150      , 12       , 12          , 9           ,  920         , 250         , 27      , 19        , 60          };
+	private static String[] branche   = { "Film"     , "Film"     , "Film"   , "Musik"  , "Musik"  , "Influence" , "Influence" ,  "Literatur" , "Sport"     , "Sport" , "Sport"   , "Sport"     };
 
 	public static Celebrity[] celebritiesArray(){
 		Celebrity[] ergebnis = new Celebrity[namen.length];
 		for (int i = 0; i < ergebnis.length; i++) {
-			Celebrity aktuell = new Celebrity(namen[i], vornamen[i], vermoegen[i]);
+			Celebrity aktuell = new Celebrity(namen[i], vornamen[i], vermoegen[i], branche[i]);
 			ergebnis[i] = aktuell;
 		}
 		//nachNamenSortieren(ergebnis);
