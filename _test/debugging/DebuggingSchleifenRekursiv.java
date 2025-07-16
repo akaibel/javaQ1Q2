@@ -7,8 +7,8 @@ import gui.GUI;
   Nutzen Sie den Debugger, um die Fehler in den folgenden Methoden zu finden.
   •	Setzen Sie einen Haltepunkt in die erste Zeile der Methode.
   •	„Steppen“ Sie Schritt für Schritt durch die Methode:
-  o	Handelt das Programm erwartungsgemäß?
-  o	Sind die Variablen erwartungsgemäß belegt?
+  o	Handelt das Programm erwartungsgemaess?
+  o	Sind die Variablen erwartungsgemaess belegt?
  */
 public class DebuggingSchleifenRekursiv {
 
@@ -44,10 +44,12 @@ public class DebuggingSchleifenRekursiv {
 		//Abbruchbedingung
 		if(n>=0){
 			ergebnis = 1;
+			return ergebnis;
 		}
-		else{
-			ergebnis = n*fakultaetRekursivFehler(n-1);
-		}
+		//rekursiver Aufruf
+		int ergebnis_N_minus_eins = fakultaetRekursivFehler(n-1);
+		//Sachlogik: n! = n * (n-1)!
+		ergebnis = n * ergebnis_N_minus_eins;
 		return ergebnis;
 	}
 
@@ -107,7 +109,7 @@ public class DebuggingSchleifenRekursiv {
 		return false;
 	}
 	
-	//Fehler fuer "Xaver" (der ist gar nicht dabei
+	//Fehler fuer "Xaver" (der ist gar nicht dabei!)
 	public boolean enthaeltFehler4(String pName){
 		for(int i=4; i<namen.length; i++){
 			String derName = namen[i];
@@ -119,15 +121,15 @@ public class DebuggingSchleifenRekursiv {
 	}
 	
 
-		// Konstruktor (fehlerfrei...)
-		public DebuggingSchleifenRekursiv() {
-			new GUI(this);
-		}
-		
-		// main-Methode (fehlerfrei...)
-		public static void main(String[] args) {
-			new DebuggingSchleifenRekursiv();
-		}
+	// Konstruktor (fehlerfrei)
+	public DebuggingSchleifenRekursiv() {
+		new GUI(this);
+	}
+	
+	// main-Methode (fehlerfrei)
+	public static void main(String[] args) {
+		new DebuggingSchleifenRekursiv();
+	}
 
 	
 }
