@@ -5,6 +5,9 @@ D.h. als Lehrer:in muss man eine sinnvolle Auswahl treffen.
 
 ***** Q1 ******
 
+*** Fehlersuche mit ChatGPT ***
+- _test.chatGPT.Strasse
+
 *** Wiederholung der EF ***
 _wiederholungEF.Fahrkartenautomat
 _wiederholungEF.KaffeeAnwendung
