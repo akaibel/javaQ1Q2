@@ -6,7 +6,7 @@ import gui.GUI;
  * AUFGABE:
  * Suche und verbessere mit ChatGPT die Fehler in den Methoden!
  * Gehe wie folgt vor:
- * - Prompt: "Java finde Fehler:"
+ * - ChatGPT-Prompt: "Java finde Fehler:"
  * - jeweils NUR EINE Methode mit Copy&Paste in ChatGPT
  * 
  * Als Kontext kann die Schnittstellenbeschreibung

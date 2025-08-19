@@ -4,7 +4,9 @@ import gui.GUI;
 
 /**
  * AUFGABE:
- * lasse ChatGPT die Klasse Stadt implementieren.
+ * 1) Lasse ChatGPT die Klasse Stadt implementieren.
+ * 2) Lasse dir die Methoden erklären, so dass du alles verstehst.
+ *    Beispiel-Prompt: Erkläre die Methode Zeile für Zeile.
  * 
  * VORAUSSETZUNGEN:
  * 1) Die Klasse Strasse muss korrigiert sein und funktionieren!
@@ -60,4 +62,4 @@ public class Stadt
 	}
 
 	
-}	// Ende der Klasse. HIER NICHTS MEHR DRUNTER SCHREIBEN
+}	

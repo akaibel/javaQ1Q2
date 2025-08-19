@@ -11,10 +11,10 @@ import linear.StackWithViewer;
 public class Celebrities {
 	
 	
-	private static String[] vornamen  = { "Timothee" , "Jennifer" , "Tom"    , "Taylor" , "Nena"   ,  "Khaby"    , "Pamela"    , "JK"         , "Sebastian" , "Coco"  , "Florian" , "Dennis"    }; 
-	private static String[] namen     = { "Chalamet" , "Lawrence" , "Cruise" , "Swift"  , "Nena"   ,  "Lame"     , "Reif"      , "Rowling"    , "Vettel"    , "Gauff" , "Wirtz"   , "Schroeder" };
-	private static int[]    vermoegen = { 25         , 140        , 891      , 150      , 12       , 12          , 9           ,  920         , 250         , 27      , 19        , 60          };
-	private static String[] branche   = { "Film"     , "Film"     , "Film"   , "Musik"  , "Musik"  , "Influence" , "Influence" ,  "Literatur" , "Sport"     , "Sport" , "Sport"   , "Sport"     };
+	private static String[] vornamen  = { "Timothee" , "Jennifer" , "Tom"    , "Taylor" , "Fischer"   ,  "Khaby"    , "Pamela"    , "JK"         , "Sebastian" , "Coco"  , "Florian" , "Dennis"    }; 
+	private static String[] namen     = { "Chalamet" , "Lawrence" , "Cruise" , "Swift"  , "Helene"    ,  "Lame"     , "Reif"      , "Rowling"    , "Vettel"    , "Gauff" , "Wirtz"   , "Schroeder" };
+	private static int[]    vermoegen = { 25         , 140        , 891      , 150      , 13          , 12          , 9           ,  920         , 250         , 27      , 19        , 60          };
+	private static String[] branche   = { "Film"     , "Film"     , "Film"   , "Musik"  , "Musik"     , "Influence" , "Influence" ,  "Literatur" , "Sport"     , "Sport" , "Sport"   , "Sport"     };
 
 	public static Celebrity[] celebritiesArray(){
 		Celebrity[] ergebnis = new Celebrity[namen.length];
