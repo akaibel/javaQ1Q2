@@ -29,7 +29,7 @@ public class Sachbearbeiter{
 	/**
 	 * wird aufgerufen, wenn in SachbearbeiterGUI "hole Auftrag" gedrueckt wird.
 	 */
-	public void holeUndBearbeiteAuftrag() {
+	public String holeUndBearbeiteAuftrag() {
 		System.out.println("Sachbearbeiter.holeUndBearbeiteAuftrag()");
 		String auftragText = null;
 		// TODO der Sachbearbeiter muss sich den naechsten Auftrag vom Stapel holen.
@@ -38,9 +38,7 @@ public class Sachbearbeiter{
 		if(auftragText == null){
 			auftragText = "*** Kaffee trinken... ***";
 		}
-		
-		// den aktuellen Auftrag anzeigen 
-		gui.append(auftragText);
+		return auftragText;
 	}
 
 }

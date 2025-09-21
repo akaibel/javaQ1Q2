@@ -80,11 +80,9 @@ public class StackTest {
 	 * um zu sortieren muss man die Methoden derReichste und loeschen geeignet aufrufen.
 	 * @return
 	 */
-	public Stack<Celebrity> sortierenNachVermoegen() {
+	public void sortierenNachVermoegen() {
 		System.out.println("*** sortierenNachVermoegen() ***");
-		Stack<Celebrity> ergebnis = new StackWithViewer<>();
 		//TODO
-		return ergebnis;
 	}
 
 	public static void main(String[] args) {

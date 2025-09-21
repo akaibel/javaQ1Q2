@@ -80,11 +80,8 @@ public class ListTest {
 	 * um zu sortieren muss man die Methoden derReichste und loeschen geeignet aufrufen.
 	 * @return
 	 */
-	public List<Celebrity> sortierenNachVermoegen() {
+	public void sortierenNachVermoegen() {
 		System.out.println("*** sortierenNachVermoegen() ***");
-		List<Celebrity> ergebnis = new ListWithViewer<>();
-		//TODO
-		return ergebnis;
 	}
 
 

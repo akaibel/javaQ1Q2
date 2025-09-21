@@ -77,11 +77,9 @@ public class QueueTest {
 	 * um zu sortieren muss man die Methoden derReichste und loeschen geeignet aufrufen.
 	 * @return
 	 */
-	public Queue<Celebrity> sortierenNachVermoegen() {
+	public void sortierenNachVermoegen() {
 		System.out.println("*** sortierenNachVermoegen() ***");
-		Queue<Celebrity> ergebnis = new QueueWithViewer<>();
 		//TODO
-		return ergebnis;
 	}
 
 

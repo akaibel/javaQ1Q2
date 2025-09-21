@@ -87,7 +87,8 @@ public class SachbearbeiterGUI extends javax.swing.JFrame {
 	}
 	
 	private void auftragButtonActionPerformed(ActionEvent evt) {
-		sachbearbeiter.holeUndBearbeiteAuftrag();
+		String auftragText = sachbearbeiter.holeUndBearbeiteAuftrag();
+		this.append(auftragText);
 		
 	}
 
