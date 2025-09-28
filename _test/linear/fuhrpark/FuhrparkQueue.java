@@ -32,15 +32,19 @@ public class FuhrparkQueue {
 		Fahrt C1 = new Fahrt("Otto", C, 40);
 		Fahrt A2 = new Fahrt("Otto", A, 25);
 		Fahrt B2 = new Fahrt("Tom", B, 15);
+		Fahrt D1 = new Fahrt("Lea", D, 41);
+		Fahrt E1 = new Fahrt("Martina", E, 43);
 		fahrtenQueue.enqueue(A1);
 		fahrtenQueue.enqueue(B1);
 		fahrtenQueue.enqueue(C1);
 		fahrtenQueue.enqueue(A2);
 		fahrtenQueue.enqueue(B2);
+		fahrtenQueue.enqueue(E1);
+		fahrtenQueue.enqueue(D1);
 	}
 
 	/**
-	 * fuegt einen Lastwagen zum lastwagenQueue hinzu.
+	 * fuegt einen Lastwagen zum lastwagenList hinzu.
 	 * Seine Beladung soll 0 sein.
 	 * @param pKennzeichen
 	 * @param pMaxBeladung
@@ -55,23 +59,26 @@ public class FuhrparkQueue {
 	}
 	
 	/**
-	 * gibt zurueck, wie viele Lastwagen maximal pGewicht geladen haben.
+	 * gibt zurueck, wie viele Lastwagen weniger oder gleich pGewicht geladen haben.
 	 * Fuer pGewicht == 20 sind das z.B. 3.
 	 * @param pGewicht
 	 * @return
 	 */
-	public int anzahlMitMaxBeladung(double pGewicht){
+	public int anzahlMitBeladungWenigerOderGleich(double pGewicht){
 		//TODO
 		return -1;
 	}
 	
+	
 	/**
-	 * sucht einen Lastwagen, der pGewicht laden kann und gibt ihn zurueck.
-	 * Der Lastwagen wird aus lastwagenQueue entfernt.
+	 * sucht einen Lastwagen, der noch pGewicht zusaetzlich laden kann und gibt ihn zurueck.
+	 * Dafuer muss man das MaximalGewicht und die Beladung beruecksichtigen.
+	 * Lastwagen B kann z.B. 20t zuladen
+	 * Der Lastwagen wird aus lastwagenList entfernt.
 	 * @param pGewicht
 	 * @return
 	 */
-	public Lastwagen lastwagenSuchen(double pGewicht){
+	public Lastwagen lastwagenFuerGewichtSuchen(double pGewicht){
 		//TODO
 		return null;
 	}

@@ -32,15 +32,19 @@ public class FuhrparkStack {
 		Fahrt C1 = new Fahrt("Otto", C, 40);
 		Fahrt A2 = new Fahrt("Otto", A, 25);
 		Fahrt B2 = new Fahrt("Tom", B, 15);
+		Fahrt D1 = new Fahrt("Lea", D, 41);
+		Fahrt E1 = new Fahrt("Martina", E, 43);
 		fahrtenStack.push(A1);
 		fahrtenStack.push(B1);
 		fahrtenStack.push(C1);
 		fahrtenStack.push(A2);
 		fahrtenStack.push(B2);
+		fahrtenStack.push(E1);
+		fahrtenStack.push(D1);
 	}
 
 	/**
-	 * fuegt einen Lastwagen zum lastwagenStack hinzu.
+	 * fuegt einen Lastwagen zum lastwagenList hinzu.
 	 * Seine Beladung soll 0 sein.
 	 * @param pKennzeichen
 	 * @param pMaxBeladung
@@ -55,23 +59,26 @@ public class FuhrparkStack {
 	}
 	
 	/**
-	 * gibt zurueck, wie viele Lastwagen maximal pGewicht geladen haben.
+	 * gibt zurueck, wie viele Lastwagen weniger oder gleich pGewicht geladen haben.
 	 * Fuer pGewicht == 20 sind das z.B. 3.
 	 * @param pGewicht
 	 * @return
 	 */
-	public int anzahlMitMaxBeladung(double pGewicht){
+	public int anzahlMitBeladungWenigerOderGleich(double pGewicht){
 		//TODO
 		return -1;
 	}
 	
+	
 	/**
-	 * sucht einen Lastwagen, der pGewicht laden kann und gibt ihn zurueck.
-	 * Der Lastwagen wird aus lastwagenStack entfernt.
+	 * sucht einen Lastwagen, der noch pGewicht zusaetzlich laden kann und gibt ihn zurueck.
+	 * Dafuer muss man das MaximalGewicht und die Beladung beruecksichtigen.
+	 * Lastwagen B kann z.B. 20t zuladen
+	 * Der Lastwagen wird aus lastwagenList entfernt.
 	 * @param pGewicht
 	 * @return
 	 */
-	public Lastwagen lastwagenSuchen(double pGewicht){
+	public Lastwagen lastwagenFuerGewichtSuchen(double pGewicht){
 		//TODO
 		return null;
 	}
