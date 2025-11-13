@@ -5,13 +5,12 @@ import gui.GUI;
 import linear.Queue;
 import linear.Queue;
 import linear.QueueWithViewer;
-import sonstiges.Auto;
-import sonstiges.Autos;
+import sonstiges.Person;
 import sonstiges.Celebrities;
 import sonstiges.Celebrity;
 
 public class AnzahlQueueTest {
-	private AnzahlQueue<Celebrity> celebritiesQueue;
+	private AnzahlQueue<Person> celebritiesQueue;
 	
 	public AnzahlQueueTest(){
 		celebritiesQueue = new AnzahlQueue<>();
@@ -28,12 +27,23 @@ public class AnzahlQueueTest {
 		celebritiesQueue.enqueue(ich);
 	}
 	
+	public void personHinzufuegen() {
+		Person p = new Person("Musterfrau", "Erika");
+		celebritiesQueue.enqueue(p);
+	}
+	
+	public void schuelerHinzufuegen() {
+		//TODO im package sonstiges die Klasse Schueler implementieren
+		//TODO die folgenden Zeile einkommentieren
+		//Schueler s = new Schueler("Busch", "Max", "5C");
+		//celebritiesStack.enqueue(s);
+	}
+
 	public void denVorderstenWegNehmen() {
 		celebritiesQueue.dequeue();
 	}
 	
 	public int gibAnzahl() {
-		//TODO
 		return celebritiesQueue.getAnzahl();
 	}
 

@@ -3,15 +3,12 @@ package _test.vererbung;
 
 import gui.GUI;
 import linear.Stack;
-import linear.Stack;
 import linear.StackWithViewer;
-import sonstiges.Auto;
-import sonstiges.Autos;
-import sonstiges.Celebrities;
 import sonstiges.Celebrity;
+import sonstiges.Person;
 
 public class AnzahlStackTest {
-	private AnzahlStack<Celebrity> celebritiesStack;
+	private AnzahlStack<Person> celebritiesStack;
 	
 	public AnzahlStackTest(){
 		celebritiesStack = new AnzahlStack<>();
@@ -23,9 +20,16 @@ public class AnzahlStackTest {
 		celebritiesStack.push(c3);
 	}
 
-	public void michHinzufuegen() {
-		Celebrity ich = new Celebrity("ich", "selber",600);
-		celebritiesStack.push(ich);
+	public void personHinzufuegen() {
+		Person p = new Person("Musterfrau", "Erika");
+		celebritiesStack.push(p);
+	}
+	
+	public void schuelerHinzufuegen() {
+		//TODO im package sonstiges die Klasse Schueler implementieren
+		//TODO die folgenden Zeile einkommentieren
+		//Schueler s = new Schueler("Busch", "Max", "5C");
+		//celebritiesStack.push(s);
 	}
 	
 	public void denVorderstenWegNehmen() {
@@ -33,7 +37,6 @@ public class AnzahlStackTest {
 	}
 	
 	public int gibAnzahl() {
-		//TODO
 		return celebritiesStack.getAnzahl();
 	}
 
