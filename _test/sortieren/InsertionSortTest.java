@@ -17,7 +17,7 @@ public class InsertionSortTest {
 	}
 
 	public List<String> insertionsort(List<String> pWoerterListe){
-		List<String> ergebnis = new ListWithViewer<String>();
+		List<String> ergebnis = new List<String>();
 		//TODO
 		return ergebnis;		
 	}
@@ -31,6 +31,7 @@ public class InsertionSortTest {
 		avengers.append("Spider Man");
 		avengers.append("Black Widow");
 		List<String> ergebnis = insertionsort(avengers);
+		ausgeben(ergebnis);
 	}
 
 	public void insertionsortTestGross(int pAnzahl){

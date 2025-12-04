@@ -17,7 +17,7 @@ public class SelectionSortTest {
 	}
 
 	public List<String> selectionsort(List<String> pWoerterListe){
-		List<String> ergebnis = new ListWithViewer<String>();
+		List<String> ergebnis = new List<String>();
 		//TODO
 		return ergebnis;		
 	}
@@ -31,6 +31,7 @@ public class SelectionSortTest {
 		avengers.append("Spider Man");
 		avengers.append("Black Widow");
 		List<String> ergebnis = selectionsort(avengers);
+		ausgeben(ergebnis);
 	}
 
 	public void selectionsortTestGross(int pAnzahl){

@@ -17,7 +17,7 @@ public class QuicksortTest {
 	}
 
 	public List<String> quicksort(List<String> pWoerterListe){
-		List<String> ergebnis = new ListWithViewer<String>();
+		List<String> ergebnis = new List<String>();
 		//TODO
 		return ergebnis;		
 	}
@@ -31,6 +31,7 @@ public class QuicksortTest {
 		avengers.append("Spider Man");
 		avengers.append("Black Widow");
 		List<String> ergebnis = quicksort(avengers);
+		ausgeben(ergebnis);
 	}
 
 	public void quicksortTestGross(int pAnzahl){
