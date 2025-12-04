@@ -16,7 +16,7 @@ public class QuicksortTest {
 		anzahlVergleiche = 0;
 	}
 
-	public List<String> quicksort(List<String> pStrings){
+	public List<String> quicksort(List<String> pWoerterListe){
 		List<String> ergebnis = new ListWithViewer<String>();
 		//TODO
 		return ergebnis;		

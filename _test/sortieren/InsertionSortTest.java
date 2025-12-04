@@ -16,7 +16,7 @@ public class InsertionSortTest {
 		anzahlVergleiche = 0;
 	}
 
-	public List<String> insertionsort(List<String> pStrings){
+	public List<String> insertionsort(List<String> pWoerterListe){
 		List<String> ergebnis = new ListWithViewer<String>();
 		//TODO
 		return ergebnis;		

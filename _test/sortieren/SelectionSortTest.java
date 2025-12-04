@@ -16,7 +16,7 @@ public class SelectionSortTest {
 		anzahlVergleiche = 0;
 	}
 
-	public List<String> selectionsort(List<String> pStrings){
+	public List<String> selectionsort(List<String> pWoerterListe){
 		List<String> ergebnis = new ListWithViewer<String>();
 		//TODO
 		return ergebnis;		
