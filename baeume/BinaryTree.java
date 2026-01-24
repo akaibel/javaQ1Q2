@@ -220,5 +220,9 @@ public class BinaryTree<ContentType> {
 		}
 	}
 	
+	public String toString() { 
+		return (this.node == null || this.node.content == null)? "Baum: leer" : "Baum: "+this.node.content; 
+	} 
 
+		 
 }
