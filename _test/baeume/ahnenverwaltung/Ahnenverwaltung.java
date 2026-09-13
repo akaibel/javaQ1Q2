@@ -86,36 +86,31 @@ public class Ahnenverwaltung {
 
 	/**
 	 * Gk Aufgabe c
+	 * (Der Quellcode ist im Verhaeltnis zu Aufgabe c modifiziert)
 	 */
-	public int wasTueIchGk (String vorname){ 
-		return wasTueIchGk(ahnenBaum, 1, null, vorname, null);
+	public int berechneWas (String vorname){ 
+		return berechneWas(ahnenBaum, 1, vorname);
 	}
 
 	/**
 	 * Gk Aufgabe c
+	 * (Der Quellcode ist im Verhaeltnis zu Aufgabe c modifiziert)
 	 */
-	public int wasTueIchGk(BinaryTree<Ahne> pBaum, int pT, String pName, String pVorname, String pGebDatum){
-		System.out.println(pBaum.getContent()+","+pT+","+pName+","+pVorname+","+pGebDatum+")");
+	private int berechneWas(BinaryTree<Ahne> pBaum, int pT, String pVorname){
 		if(pBaum.isEmpty()){
-			System.out.println("null -> 0");
 			return 0;
 		}
-		else{
-			Ahne lAhne = (Ahne)pBaum.getContent();
-			// Auf Vergleich von Name und Geburtsdatum wird verzichtet.
-			if(pVorname.equals(lAhne.gibVorname())){
-				System.out.println(lAhne.gibVorname()+" -> "+pT);
-				return pT;
-			}
-			else{
-				int ergebnis =  
-						this.wasTueIchGk(pBaum.getLeftTree(), pT+1, pName, pVorname, pGebDatum) 
-						+ this.wasTueIchGk(pBaum.getRightTree(), pT+1, pName, pVorname, pGebDatum);
-				System.out.println(lAhne.gibVorname()+" -> "+ergebnis);
-				return ergebnis;
-			}
+		Ahne wurzelAhne = pBaum.getContent();
+		System.out.println(wurzelAhne.gibVorname()+": " + pT);
+		if(pVorname.equals(wurzelAhne.gibVorname())){
+			return pT;
 		}
+		int ergebnis =  
+			this.berechneWas(pBaum.getLeftTree(), pT+1, pVorname) 
+			+ this.berechneWas(pBaum.getRightTree(), pT+1, pVorname);
+		return ergebnis;
 	}
+
 
 	public String wasTueIchLk() {
 		String lString ="";
